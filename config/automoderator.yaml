@@ -520,12 +520,6 @@ action_reason: "Banned Spam Channel"
     action: remove
     action_reason: 'AutoMod rule section 19B - Remove troll comments from users with < 50 karma and < 30 days account age. Satisfy any threshold. Refer this activity to the /r/CryptoMarkets. Keyword detected: "{{match}}".'
     message: 'Pumping, venting, trolling, "lambos", "to the moon" or any other similar behavior, will not be tolerated from unestablished accounts.'  
----
-###### Section 20 = Sort Daily Discussion threads comments by newest first.
-    author: Automoderator
-    set_suggested_sort: new
-    type: submission
-    title (regex, includes): ["Daily", "Weekly"]
     
 ---
 ###### Section 20A - Detects submissions linking to Google Docs. Pins comment warning about privacy risks.
@@ -541,14 +535,6 @@ action_reason: "Banned Spam Channel"
 
          If this automated message was in error, please [message the mods](https://www.reddit.com/message/compose?to=%2Fr%2FEthFinance). 
     
----
-###### Section 20B - Remove content from annoying bots.
-#    author:
-#        name: [bartonvodka, ConvertsToMetric, HelperBot_, mentionhelper, notahelpfulbot, TotesMessenger, you_get_CMV_delta, youtubefactsbot, ayylmao2dongerbot-v2, yourewelcome_bot, giphy, GfycatOfficialBot]
-#    action: spam
-#    action_reason: "Potential bot spam. Manually approve. AutoMod rule section 20B."
-
-
 ### USER REPORTING
 #### First Tier Submission Report Rules
 ---
@@ -561,7 +547,7 @@ action_reason: "Banned Spam Channel"
         satisfy_any_threshold: true
         is_contributor: false
         is_gold: false
-    action: filter
+    action: remove
     action_reason: 'Section 14A-1 - Auto filter submissions reported 4 times with < 250 comment karma and/or 2 months account age.'
     modmail_subject: '5+ reports - Submission filtered. '
     modmail: |
@@ -591,7 +577,7 @@ action_reason: "Banned Spam Channel"
     title+body (regex): ["a(ss|rse|es)([ -]?holes?)?","b(i|\\*)o?(tch|\\*{3})(y|es)?","cocks?([ -]?suck(ers?|ing)?)?","cum(ming|[ -]shots?)?","cunts?","((mother|motha|mutha)[ -]?)?f(u?c?k?k|\\*ck|\\*{0,2}k|\\*{3})(er|ed|ing|s)?", "s(h(i|ar?|\\*)t|\\*{3}|h\\*{2})(s|ter|e|ting)?", "\\(?(\\d{3})\\)?([ .-])(\\d{3})([ .-])(\\d{4})","(\\d{5})([ .-])(\\d{6})","\\(?(\\d{4})\\)?([ .-])(\\d{3})([ .-])(\\d{3})","\\(?(\\d{2})\\)?([ .-])(\\d{4})([ .-])(\\d{4})","\\(?(\\d{2})\\)?([ .-])(\\d{3})([ .-])(\\d{4})","\\+([\\d ]{10,15})", "[!#$%&'*+./0-9=?_`a-z{|}~^-]+@[.a-z-]+\\.(?:com|org|net)", "\\W[A-Za-z]?\\d{1,6}[A-Za-z]? (E(\\.|ast)?|W(\\.|est)?|N(\\.|orth)?|S(\\.|outh)? )?[\\p{Pi}\\p{Pf}]?\\w+( \\w+)?[\\p{Pi}\\p{Pf}]? (st(reet)?|ave(enue)?|r(oa)?d|dr(ive)?|c(our)?t|blvd|boulevard|lane|ln|highway|hwy|route|rt)"] # Street addresses
     ~body+title+url#whitelist (regex): ["(\\[[^\\]]+?\\]\\()?(https?://|www\\.)\\S+\\)?", "(800|855|866|877|888|007|911)\\W*\\d{3}\\W*\\d{4}", "\\d{3}\\W*555\\W*\\d{4}", "999-999-9999", "000-000-0000", "123-456-7890", "111-111-1111", "012-345-6789", "888-888-8888", "281\\W*330\\W*8004", "777-777-7777", "678-999-8212", "999([ .-])119([ .-])7253","0118 999 811","0118 999 881", "867( -)?5309", "505\\W*503\\W*4455", "1024 2048", "OKemail1@domain.com", "OKemail2@domain.com", "second drive", "minute drive", "hour drive", "day drive", "week drive", "gb drive", "tb drive", "123 Main St", "123 Main Street", "221b baker st", "221b baker street"]
     ~title+body#whitelist: [second drive, minute drive, hour drive, day drive, week drive, gb drive, tb drive, 123 Main St, 123 Main Street, 221b baker st, 221b baker street]
-    action: filter
+    action: remove
     action_reason: 'Section 14A-2 - Auto filter Doxxing attempt.'
     modmail_subject: '5+ reports Doxxing attempt - Submission filtered. '
     modmail: |
