@@ -2,9 +2,8 @@
 
 ########## AUTOMODERATOR RESOURCE LINKS
 - http://www.reddit.com/r/AutoModerator
-- https://github.com/Deimos/AutoModerator/wiki/Wiki-Configuration
-- https://github.com/Deimos/AutoModerator/wiki/Standard-Conditions
-- https://github.com/Deimos/AutoModerator/wiki/Common-Wiki-Conditions
+- https://www.reddit.com/wiki/automoderator/full-documentation
+- https://www.reddit.com/r/AutoModerator/wiki/library
 
 ######## REGEX
 - https://code.google.com/p/re2/wiki/Syntax
@@ -521,12 +520,6 @@ action_reason: "Banned Spam Channel"
     action: remove
     action_reason: 'AutoMod rule section 19B - Remove troll comments from users with < 50 karma and < 30 days account age. Satisfy any threshold. Refer this activity to the /r/CryptoMarkets. Keyword detected: "{{match}}".'
     message: 'Pumping, venting, trolling, "lambos", "to the moon" or any other similar behavior, will not be tolerated from unestablished accounts.'  
----
-###### Section 20 = Sort Daily Discussion threads comments by newest first.
-    author: Automoderator
-    set_suggested_sort: new
-    type: submission
-    title (regex, includes): ["Daily", "Weekly"]
     
 ---
 ###### Section 20A - Detects submissions linking to Google Docs. Pins comment warning about privacy risks.
@@ -542,28 +535,19 @@ action_reason: "Banned Spam Channel"
 
          If this automated message was in error, please [message the mods](https://www.reddit.com/message/compose?to=%2Fr%2FEthFinance). 
     
----
-###### Section 20B - Remove content from annoying bots.
-#    author:
-#        name: [bartonvodka, ConvertsToMetric, HelperBot_, mentionhelper, notahelpfulbot, TotesMessenger, you_get_CMV_delta, youtubefactsbot, ayylmao2dongerbot-v2, yourewelcome_bot, giphy, GfycatOfficialBot]
-#    action: spam
-#    action_reason: "Potential bot spam. Manually approve. AutoMod rule section 20B."
-
-
 ### USER REPORTING
 #### First Tier Submission Report Rules
 ---
 ###### Section 14A-1 - Submission has 4+ Reports and below thresholds.   
     reports: 4
     type: submission
-    action: remove
     author:       
         comment_karma: '< 250'
         account_age: '< 2 months'
         satisfy_any_threshold: true
         is_contributor: false
         is_gold: false
-    action: filter
+    action: remove
     action_reason: 'Section 14A-1 - Auto filter submissions reported 4 times with < 250 comment karma and/or 2 months account age.'
     modmail_subject: '5+ reports - Submission filtered. '
     modmail: |
@@ -587,26 +571,19 @@ action_reason: "Banned Spam Channel"
         ---
         
 ---
-###### Section 14A-2 - Submission has 5+ Reports and below thresholds.   
+###### Section 14A-2 - DOXXING ATTEMPT - Submission has 5+ Reports and below thresholds.   
     reports: 5
     type: submission
     title+body (regex): ["a(ss|rse|es)([ -]?holes?)?","b(i|\\*)o?(tch|\\*{3})(y|es)?","cocks?([ -]?suck(ers?|ing)?)?","cum(ming|[ -]shots?)?","cunts?","((mother|motha|mutha)[ -]?)?f(u?c?k?k|\\*ck|\\*{0,2}k|\\*{3})(er|ed|ing|s)?", "s(h(i|ar?|\\*)t|\\*{3}|h\\*{2})(s|ter|e|ting)?", "\\(?(\\d{3})\\)?([ .-])(\\d{3})([ .-])(\\d{4})","(\\d{5})([ .-])(\\d{6})","\\(?(\\d{4})\\)?([ .-])(\\d{3})([ .-])(\\d{3})","\\(?(\\d{2})\\)?([ .-])(\\d{4})([ .-])(\\d{4})","\\(?(\\d{2})\\)?([ .-])(\\d{3})([ .-])(\\d{4})","\\+([\\d ]{10,15})", "[!#$%&'*+./0-9=?_`a-z{|}~^-]+@[.a-z-]+\\.(?:com|org|net)", "\\W[A-Za-z]?\\d{1,6}[A-Za-z]? (E(\\.|ast)?|W(\\.|est)?|N(\\.|orth)?|S(\\.|outh)? )?[\\p{Pi}\\p{Pf}]?\\w+( \\w+)?[\\p{Pi}\\p{Pf}]? (st(reet)?|ave(enue)?|r(oa)?d|dr(ive)?|c(our)?t|blvd|boulevard|lane|ln|highway|hwy|route|rt)"] # Street addresses
     ~body+title+url#whitelist (regex): ["(\\[[^\\]]+?\\]\\()?(https?://|www\\.)\\S+\\)?", "(800|855|866|877|888|007|911)\\W*\\d{3}\\W*\\d{4}", "\\d{3}\\W*555\\W*\\d{4}", "999-999-9999", "000-000-0000", "123-456-7890", "111-111-1111", "012-345-6789", "888-888-8888", "281\\W*330\\W*8004", "777-777-7777", "678-999-8212", "999([ .-])119([ .-])7253","0118 999 811","0118 999 881", "867( -)?5309", "505\\W*503\\W*4455", "1024 2048", "OKemail1@domain.com", "OKemail2@domain.com", "second drive", "minute drive", "hour drive", "day drive", "week drive", "gb drive", "tb drive", "123 Main St", "123 Main Street", "221b baker st", "221b baker street"]
     ~title+body#whitelist: [second drive, minute drive, hour drive, day drive, week drive, gb drive, tb drive, 123 Main St, 123 Main Street, 221b baker st, 221b baker street]
     action: remove
-    author:       
-        comment_karma: '< 500'
-        account_age: '< 4 months'
-        satisfy_any_threshold: true
-        is_contributor: false
-        is_gold: false
-    action: filter
-    action_reason: 'Section 14A-2 - Auto filter submissions reported 5 times with < 500 comment karma and/or 4 months account age.'
-    modmail_subject: '5+ reports - Submission filtered. '
+    action_reason: 'Section 14A-2 - Auto filter Doxxing attempt.'
+    modmail_subject: '5+ reports Doxxing attempt - Submission filtered. '
     modmail: |
         **AutoMod Rule:** [Section 14A-2](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
         
-        **Reasoning:** 5+ reports. < 500 comment karma and/or < 4 months account age. Profanity and doxxing detected: {{match}}
+        **Reasoning:** 5+ reports. Profanity and doxxing detected: {{match}}
         
         **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
         
@@ -627,7 +604,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14B - Submission has 6+ Reports and over thresholds.   
     reports: 6
     type: link submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
     author:       
         comment_karma: '< 1000'
         account_age: '< 6 months'
@@ -664,7 +640,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14C - Submission has 8+ Reports and over thresholds.   
     reports: 9
     type: link submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
     author:       
         comment_karma: '< 1500'
         account_age: '< 8 months'
@@ -700,8 +675,7 @@ action_reason: "Banned Spam Channel"
 ---
 ###### Section 14D - Submission has 7+ Reports and over thresholds. For notification purposes only since certain coins are excluded from this report threshold.  
     reports: 7
-    type: submission
-    title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.       
+    type: submission  
     author:
         comment_karma: '< 2000'
         account_age: '< 10 months'
@@ -734,7 +708,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14E - Submission has 7+ Reports and over thresholds.   
     reports: 7
     type: text submission
-    ~title+body: ["Nano", "RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
     author:       
         comment_karma: '< 2000'
         account_age: '< 10 months'
@@ -771,7 +744,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14F - Submission has 10+ Reports and over thresholds.   
     reports: 10
     type: text submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
     author:       
         comment_karma: '< 2500'
         account_age: '< 12 months'
@@ -809,7 +781,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14G - Submission has 12+ Reports and below thresholds.  
     reports: 12
     type: submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
     author:         
         comment_karma: '< 2500'
         account_age: '< 12 months'
@@ -843,7 +814,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14F - Submission has 9+ Reports and over thresholds.  
     reports: 12
     type: link submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] 
     author:         
         comment_karma: '< 4500'
         account_age: '< 16 months'
@@ -880,7 +850,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14G-1 - Submission has 9+ Reports and over thresholds.  
     reports: 15
     type: link submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:         
         comment_karma: '< 5500'
         account_age: '< 20 months'
@@ -916,8 +885,7 @@ action_reason: "Banned Spam Channel"
 ---
 ###### Section 14G-2 - Submission has 14+ Reports and over thresholds. For notification purposes only since certain coins are excluded from this report threshold.  
     reports: 14
-    type: submission
-    title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.author:       
+    type: submission 
     author:
         comment_karma: '< 5500'
         account_age: '< 20 months'
@@ -950,7 +918,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14H - Submission has 1+ Reports and over thresholds.  
     reports: 13
     type: text submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:         
         comment_karma: '< 6500'
         account_age: '< 24 months'
@@ -987,7 +954,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14I - Submission has 1+ Reports and over thresholds.  
     reports: 16
     type: text submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:         
         comment_karma: '< 7500'
         account_age: '< 28 months'
@@ -1025,7 +991,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14J - Submission has 13+ Reports and below thresholds.  
     reports: 17
     type: submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:      
         comment_karma: '< 7500'
         account_age: '< 28 months'
@@ -1059,7 +1024,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14K - Submission has 13+ Reports and over thresholds.
     reports: 18
     type: link submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:      
         comment_karma: '< 10000'
         account_age: '< 3 years'
@@ -1096,7 +1060,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14L-1 - Submission has 13+ Reports and over thresholds.
     reports: 21
     type: link submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:      
         comment_karma: '< 13500'
         account_age: '< 4 years'
@@ -1133,7 +1096,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14L-2 - Submission has 20+ Reports and over thresholds. For notification purposes only since certain coins are excluded from this report threshold.  
     reports: 20
     type: submission
-    title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.author:       
     author:
         comment_karma: '< 13500'
         account_age: '< 20 months'
@@ -1166,7 +1128,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14M - Submission has 14+ Reports and over thresholds.
     reports: 19
     type: text submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:      
         comment_karma: '< 17000'
         account_age: '< 5 years'
@@ -1203,7 +1164,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14N - Submission has 21+ Reports and over thresholds.
     reports: 23
     type: text submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:      
         comment_karma: '< 20500'
         account_age: '< 6 years'
@@ -1240,7 +1200,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14N - Submission has 21+ Reports and over thresholds.
     reports: 24
     type: submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:
         comment_karma: '< 25000'
         account_age: '< 7 years'
@@ -1276,7 +1235,6 @@ action_reason: "Banned Spam Channel"
 ###### Section 14N - Submission has 21+ Reports and over thresholds.
     reports: 25
     type: submission
-    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
     author:
         comment_karma: '> 25000'
         account_age: '> 7 years'
