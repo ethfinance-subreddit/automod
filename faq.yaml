@@ -1,0 +1,286 @@
+**[Message the mods](https://www.reddit.com/message/compose?to=%2Fr%2Fethfinance) if you would like to be a wiki contributor. The requirements for editing the wiki are 1000 comment karma and 2 years account age, however exceptions can be made on a case by case basis.**  
+
+#Ethereum FAQ
+
+---
+##- Posted by [/u/vbuterin on /r/Ethereum](https://www.reddit.com/r/ethereum/comments/48qx9h/so_fill_me_in_here/d0lsziz).
+
+**Whats all this stuff about ethereum and ether being different?**
+
+An important point about this project is that we see ethereum as being a platform first. ***If you approach it from the perspective of ether being a coin, with all the smart contract stuff being just bells and whistles on top to make the coin more valuable, you are going to have a hard time understanding this community***; it's really all about the applications first and foremost, and ether is there simply as a token to facilitate payment of transaction fees and incentivize mining (and of course it can also be used as a default medium for inter-application payments and security deposits).
+
+To get back to your question, Ethereum is the name of the platform, and ether is the base token.
+
+**Why is Ethereum rising so quickly?**
+
+- [News](https://www.reddit.com/r/ethtrader/comments/45shqc/boneheads_ethereum_news_to_come_updated/), and [more news](https://www.reddit.com/r/ethereum/comments/46fz8f/ethereum_in_the_year_of_the_fire_monkey_can_you/) of Increasing Ethereum Adoption
+- Applications being built on the platform
+- Because the dark and demonic forces that control such things have looked kindly upon it, at least for the time being.
+
+**Where is the value in ethereum derived from?**
+
+Ethereum is useful primarily because of its very high degree of generality, allowing users to build a very wide array of applications directly on the blockchain, ranging from currencies to various kinds of financial contracts to domain name registries, identity registries and certificate authority systems and even voting and governance applications. The protocol includes a built-in programming language that essentially allows you to specify whatever "rules" for a smart contract that you want, and the blockchain executes them for you.
+
+**Hows the community efforts progressing over the last few years?**
+
+http://dapps.ethercasts.com is a good place to get started to get an idea of what people are building on ethereum now.
+
+**Whats on the horizon**
+
+Light clients, the full Mist release with Metropolis, the proof-of-stake release with Serenity, WebAssembly, sharding-based massive scalability in Ethereum 2.0 and 3.0, and lots of fun stuff with advanced cryptography. On top of that, there's all the exciting stuff the ethereum-based applications are doing, eg. http://augur.net, http://makerdao.com, http://slock.it
+
+**and most of all is the rise sustainable?**
+
+Maybe.
+
+**What gets sent to (example address) 0xc594f2a173ad72a7b86c67dd9d3205626a1d12ca? Ether? Ethereum? Gas?**
+
+Ether.
+
+Gas is an accounting mechanism for keeping track of how much computation and storage a given transaction consumes; it isn't really visible on the outside, you can't hold it or trade it. Every block has a gas limit of 3141592 gas the miner is allowed to fit any number of transactions in the block as long as the total gas consumption of all transactions together does not exceed 3141592 (that limit isn't a hard cap, it adjusts using a dynamic formula based on actual usage).
+
+**What is this Frontier/Homestead/Metropolis/Serenity I keep hearing about?**
+
+They are different stages/releases:
+
+* Frontier - Initial release, meant for developers.
+* Homestead -Stable release, release of official public wallet.
+* Metropolis - Release of the Mist Browser, and (possibly) the light client.
+* Serenity - Switch to Proof of Stake using CASPER. Scalability Improvements.
+
+**Does Ethereum have a blocksize limit?**
+
+No. The blocksize is adjusted dynamically.
+
+**What are the block times?**
+
+On average 16 seconds.
+
+**How many TPS does Ethereum support**
+
+between 20 tps to 45 tps. possibly more.
+
+**With CASPER and future iterations what will the block times and tps be?**
+
+1-2 second block times and 115000 tps.
+
+**How can Ethereum support such a short block times without causing forks?**
+
+It uses the [GHOST](https://blog.ethereum.org/2014/07/11/toward-a-12-second-block-time/) protocol. For proof of stake it will use CASPER.
+
+**Where can I find more info about CASPER?**
+
+See:
+
+* [Introducing Casper](https://blog.ethereum.org/2015/08/01/introducing-casper-friendly-ghost/)
+* [Understanding Serenity](https://blog.ethereum.org/2015/12/28/understanding-serenity-part-2-casper/)
+* [Presentation of CASPER at DEVCON](https://www.youtube.com/watch?v=WrivwsgK2xo&list=PLgQrb_z7oTH4VHfW_ZCnNyzd5N9nULpvA&index=12)
+* [Interview with Vlad Zamfir](https://www.youtube.com/watch?v=StMBdBfwn8c)
+
+**Why do/did I see the word 'safe' crossed out?**
+
+Because the first release - named Frontier - was meant to be for developers and not the general public. The Homestead release is meant to be the stable (i.e 'safe') release.
+
+**Is Ether designed to be a currency? Is it a competitor to Bitcoin?**
+
+Depends on who you ask. The primary purpose of ether is to pay for 'gas' to run smart contracts on the platform. It can be used as a currency, and a very good one at that (quick confirmation times, smart contract capabilities, large TPS). However, many think the "true" currency capabilities will come from currencies built on the platform such as stablecoins (e.g Maker).
+
+**Is Ether pre-mined?**
+
+Ether had a crowdsale. It launched with 72M, where 60M was **presold** to buyers and 12M was allocated to the foundation. All for development purposes. Therefore 83% of the initial supply was spread out to pre-sale buyers and the remaining allocated for the Foundation to ensure continuous development and support of the platform.
+
+**Does the Foundation have enough money to continue?**
+
+Vitalik recently stated the foundation has enough money for 4 years of operations. At the time the price of Ether was $4.
+
+**What is the Inflation?**
+
+* proof of work (current) ~15% in the first year, **capping at 90M**
+* proof of stake (serenity release), 0% to 8% or continuously decreasing %. has not been decided yet.
+
+**Is the Ether supply "infinite"?**
+
+The roadmap originally intended for 18M more ether to be mined, **with a cap of 90M**. Followed by a switch to Proof of Stake in the Serenity Release. It's unclear at this point if there will any inflation with Serenity release, if there is it will be between 0% and 8% depending on what makes sense for the CASPER algorithm and the platform.
+
+**Does Ethereum have a 'dictator'?**
+
+No. There are several teams and leads that decide the directions of the platform. For the main clients, the lead devs are: Jeffrey Wilcke , Gavin Wood, Vitalik Buterin, Christian Reitwiessner and Vlad Zamfir.
+
+**Are Ethereum & Bitcoin Hashrates comparable?**
+
+Not directly since they use very different mining algorithms. Ethereums uses an ASIC resistant algorithm named EThash.
+
+**What is the current Hashrate of the Ethereum chain? How many nodes? How does it compare to Bitcoin**
+
+Since Bitcoin and Ethereum have different algorithms, the two hash rates are not directly compatible. It is estimated that the current Ethereum Hashrate is equivalent to 50% to as much as 200% of the current Bitcoin Hashrate. (an attempt to calculate this can be found [here](https://docs.google.com/spreadsheets/d/1-deRZnzzG8Qs8jzcVvKvPUOBxMKOYipkCzJsSyCdZlc/)).
+However the Mining reward for Ethereum has surpassed Bitcoin and is currently at 216% in relation to Bitcoin.
+
+hashrate: 33.5 TH/s ; 33554 nodes or 4.5x more nodes than Bitcoin.
+
+(stats from june 14th, 2017)
+
+**Can Ethereum transactions be sent to multiple recepients?**
+
+yes. [see more details](https://www.reddit.com/r/ethereum/comments/4fija2/is_this_true_ethereum_does_not_allow_multiple/d29ia91?context=10000)
+
+**Do "creators receive quite a substantial chunk of newly-mined coins every year, no matter what."?**
+
+No. That's just [FUD](https://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt).
+
+**weak subjectivity: Is it true that Proof of Stake will have a master key owned and controlled by Vitalik that determines which chain is true?**
+
+No. That's complete [FUD](https://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt).
+
+
+**What are the risks of investing in Ether?**
+
+(taken & modified from this [post](https://www.reddit.com/r/ethtrader/comments/462hfk/logic_please_anyone_who_feels_eths_marketcap/d01xy12))
+
+[Technical risks]
+
+* CASPER POS is challenging and not 100% certain it will work.
+* Scaling & sharding is challenging and not 100% certain it will work.
+* Maybe despite being batshit crazy Paul Sztorc could be right that oracles are impossible
+* Possible long term security holes of fundamental flaws might be discovered
+
+[Resource & cashflow risk]
+
+* Foundation has limitted funds.
+* Key developers could be poached.
+* Still not seeing evidence of significant VC investment.
+
+[Competition risks]
+
+* R3 may win financial market
+* Hyperledger may win IOT market
+* Ripple could win international settlement & remittances market.
+* Some anon coin may win the darknet market
+* Could have a million ethereum alt coins indeed consensy could themselves fork Ethereum
+* Bitcoin might finally sort out their politics
+* Rootstock & counterparty
+* Some new unknown coin could be a better ethereum than ethereum.
+
+[Regulatory risks]
+
+* Goverments could clamp down on crypto exchanges
+* Goverments could require permissioned system or back a rival system
+* Goverments could clamp down on IPO or crowd shares
+* Goverments could clamp down on issuance of assets or create more onerous KYC requirements
+
+[Reputational risks]
+
+* If Kraken or Polonex is the new Mt Gox
+* If some scam or pyramid scheme gives Dapps a bad name
+* If a significant number of wallets are hacked
+* If Ethereum community becomes as toxic as the bitcoin community
+
+[Barriers to adoption]
+
+* It is hard to communicate what Ethereum is
+* Press insist on using the term 'blockchain' or 'bitcoin'
+* Ethereum PR sucks.
+* It is still hard for 'normal people' to buy Ether and securely store it.
+* There is not yet a killer app
+* Maybe nobody actually wants Dapps or even crypto currency they just want an investment opportunity
+* Even if there is a killer app the advantages of decentralisation are unclear
+* Noone actually cares about decentralisation apart from nutjob bitcoiners and they only care about bitcoin
+* Still no major exchanges listing and hard to buy in directly from fiat
+* Major Chinese exchanges may never add Eth because they make all their money from mining BTC so don't want Eth to succeed.
+
+[Risk Ethereum could succeed without Ether becoming really valuable]
+
+* Stable coins, gold & other currencies will be used for payment & wealth storage not Eth.
+* Eth will lose it's monopoly for buying gas
+* Because of competition & scaling transaction fees will fall to the cost of operation & capital.
+* Although even with the above I still put us way above Ripple & even BTC.
+
+**What Wallets are available?**
+
+* [Official Ethereum Wallet](https://github.com/ethereum/mist/releases)
+* [MyEtherWallet](https://www.myetherwallet.com/)
+* [Jaxx](http://jaxx.io/)
+* [Icebox](https://github.com/ConsenSys/icebox)
+
+**What DApp Browsers are available?**
+
+* [Mist](https://github.com/ethereum/mist)
+* [MetaMask](https://metamask.io/)
+* [AlethZero](https://github.com/ethereum/alethzero)
+
+**Resources for Technical & DApp Development**
+
+* [Ethereum Stack Exchange](https://ethereum.stackexchange.com/)
+* [Official Guide](http://guide.ethereum.org/)
+* [Official Tutorials](https://ethereum.org/)
+* Frameworks: [Embark](https://github.com/iurimatias/embark-framework), [DApple](https://github.com/nexusdev/dapple), [Populus](https://populus.readthedocs.org/en/latest/), [Meteor Boilerplate](https://github.com/SilentCicero/meteor-dapp-boilerplate)
+* [Solidity Documentation](https://solidity.readthedocs.org/en/latest/)
+* [Javascript API](https://github.com/ethereum/wiki/wiki/JavaScript-API#getting-started)
+
+**Ethereum Clients**
+
+* [Geth \(Go\)](https://ethereum.github.io/go-ethereum/)
+* [WebThree (C++)](https://github.com/ethereum/webthree-umbrella)
+* [PyEthereum (Python)](https://github.com/ethereum/pyethereum)
+* [Parity (Rust)](https://ethcore.io/parity.html)
+* [EthereumJ (Java)](http://ethereumj.io/)
+* [Ethereum-Ruby (Ruby)](https://github.com/DigixGlobal/ethereum-ruby)
+* [NEthereum (.net)](http://www.nethereum.com/)
+
+**Exchanges**
+
+* [Poloniex](https://poloniex.com/)
+* [Kraken](https://www.kraken.com/)
+* [Gatecoin](https://www.gatecoin.com/) (Non-US)
+* [Shapeshift](https://www.shapeshift.io/)
+* [Bittrex](https://bittrex.com/)
+* [Yunbi - China](https://yunbi.com/)
+* [Others](https://coinmarketcap.com/currencies/ethereum/#markets)
+* [EtherEx](https://etherex.org/) - (Decentralized exchange built on Ethereum.)
+
+**Misc Resources**
+
+* [Meetups](http://ethereum.meetup.com/)
+* [List of Ethereum Applications](http://dapps.ethercasts.com/)
+* [Telegram trading channel](https://telegram.me/joinchat/AyAwggbO-w_gl8xqPkiLuw)
+* [How to easily set up your own Ethereum Mist wallet!](https://www.youtube.com/watch?v=Z6lE0Ctaeqs)
+* [Network Stats (note: only whitelisted nodes are displayed)](https://ethstats.net/)
+
+**Related subreddits:**
+
+* /r/Augur
+* /r/BitNation
+* /r/dao
+* /r/dapps
+* /r/dogethereum
+* /r/ethdapps - Focused discussion about live distributed applications on Ethereum.
+* /r/ethereum - Offical sub, for discussion of Tech and Application Development using Ethereum.
+* /r/ethereumjobs
+* /r/ethereumprice
+* /r/EthereumProgramming
+* /r/ethereumprojects
+* /r/EtherEx
+* /r/EtherMining - Ether Mining discussion.
+* /r/ethinvestor- Marketplace for individuals looking to exchange goods and services for ether.
+* /r/ethmarket
+* /r/ETHSTAKERS
+* /r/ethtokens
+* /r/ethtrader - Discussion of trading, memes, news, price or market discussions related to Ethereum and relevant tech.
+* /r/groupgnosis
+* /r/ipfs
+* /r/slockit
+* /r/solidity
+* /r/reptrader/
+* /r/safemarket
+
+**Important Tokens**
+
+* [Augur](http://www.augur.net/) - Prediction Market ([exchange](https://gatecoin.com/) - Non-US)
+* [Digix](https://dgx.io/#/) - Gold certificates
+* [Maker](https://makerdao.com/) - Stable Coin
+* [Slock.it](http://slock.it/index.html) - Internet of Things
+
+**Chain Explorers**
+
+* [EtherChain](https://etherchain.org/)
+* [EtherScan](http://etherscan.io/)
+* [EtherCamp](https://live.ether.camp/)

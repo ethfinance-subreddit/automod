@@ -1,0 +1,2316 @@
+###### If you edit this page, you must [click this link, then click "send"](http://www.reddit.com/message/compose/?to=AutoModerator&subject=ethfinance&message=update) to have AutoModerator re-load the rules from here
+
+########## AUTOMODERATOR RESOURCE LINKS
+- http://www.reddit.com/r/AutoModerator
+- https://github.com/Deimos/AutoModerator/wiki/Wiki-Configuration
+- https://github.com/Deimos/AutoModerator/wiki/Standard-Conditions
+- https://github.com/Deimos/AutoModerator/wiki/Common-Wiki-Conditions
+
+######## REGEX
+- https://code.google.com/p/re2/wiki/Syntax
+
+######## RULES
+
+---
+######## DOMAIN WHITELIST
+    #  Approve By Source
+    type: submission
+    domain: ["bankless.substack.com"]
+    action: approve
+
+####### INFORMS MODS OF POTENTIAL SCAMS AND FILTERS/REMOVES ITEM
+
+
+---
+###### Section 1A - Blacklisted  Words- Filtered
+    title+body (case-sensitive): ["YFDFI", "$MTLX", "$IDEA", "Mettalex", "PolkaCover", "BUCC", "$POOLZ", "$DDIM", "Livermore Accumulation Cylinders", "gotEM", "PTERIA", "NewsCrypto", "Cointiger", "Baex", "xsigma", "Buccaneer V2", "CVR", "ZKI", "PolkaCover", "Dymmax", "$DMX", "DuckDuo", "PTERIA", "RBC", "GotEm", "GOTem", "gotEM", "GTX", "Earnbet", "EarnBet", "earnbet", "JuraSwap", "Juraswap", "juraswap", "dappradar", "Dappradar", "DappRadar", "DAPPradar", "Hegic", "hegic", "renBTC", "RenBTC", "Ren", "RenProject", "RENProtocol", "RenProject", "RenProject", "Fulcrum", "fulcrum", "bZx", "bzx", "PayTrie", "PAYTRIE", "paytrie", "Hex", "HEX", "hex", "Band", "Band Protocol", "Band protocol", "band protocol", "CCUniverse", "ccuniverse", "MYUBI", "Myubi", "1XBit", "1XBIT", "1xBit", "1xbit", "Syscoin", "syscoin", "SportX", "sportx", "AMP", "AMPL", "Ampleforth", "ampleforth", "7000", "xCrypt", "XCRYPT", "xcrypt", "Switcheo", "switcheo", "Aurox", "SwitchDex", "Ahrvo", "PrimeXBT", "LATOKEN", "LAToken", "LaToken", "latoken", "OOOBTC", "FLETA", "Fleta", "fleta", "BitRabbit", "Bitrabbit", "bitrabbit", "Metahash", "MetaHash", "metahash", "DRIFE", "Drife", "drife", "2XHR", "2xHR", "2xhr", "Bitpatron", "BitPatron", "Matic", "MATIC", "matic", "betoken", "Betoken", "BeToken", "AUDcoin", "audcoin", "Aussie Digital", "hodlbot", "cryptoraves", "UBECOIN", "Ubecoin", "ubecoin", "Verasity", "verasity", "dex.blue", "Celer", "Bibox", "Bitvalve", "BitValve", "Lympo", "Fetch", "fetch", "FETCH", "fetchai", "MESG", "Superorder", "superorder", "Sportcrypt", "sportcrypt", "Library", "library", "PAGO", "Pago", "pago", "Kinesis", "kinesis", "Aeternity", "aeternity", "Crypterium", "crypterium", "Encrybit", "EncryBit", "encrybit", "Bybit", "CoinFi", "coinfi", "Coinfi", "COINFI", "hetachain", "HetaChain", "VALOR", "Valor", "valor", "Cybr", "CYBR", "cybr", "#ENCX", "ENCX", "encx", "LOCI", "Loci", "loci", "Encrybit", "encrybit", "BRV", "BRAVO", "Bravo", "GoChain", "GOChain", "GoCHAIN", "gochain", "Relex", "relex", "BANCOR", "Bancor", "bancor", "Orvium", "orvium", "ChangeNOW", "changenow", "Changenow", "ChangeNow", "Skynet", "skynet", "VERTEX", "vertex", "Vertex", "monvid", "Ethmooner", "Zinc", "FairWin", "Skynet", "#DCC", "DCC", "FOMO3D", "Fomo3d", "Fomo3D", "buy-or-sell-what-the-hell", "Litter", "litter", "Spotcoin", "spotcoin", "littercoin", "0xbitcoin", "0xBitcoin", "qurrex", "0xBTC", "0xBtc", "powhcoin", "EtherWall", "Ether Wall", "Ether Wall Core", "EtherWallCore", "% better", "Bitcoin A-Trade", "and arbitrage", "Bitcoin A Trade", "Bitcoin AT", "p&d","from Coinbase here!", "BitTXGenerator", "Bitcoin-A-Trade", "IDICE", "Tornado Pumps", "DreamTeam", "Celer", "CELER","coinbeatnews.live", "bitcash.group", "HackTeam", "Taklimakan", "starnews.market" ] #Reserve Words: "anonymous deposits", "anonymous deposit", "anonymous withdrawal", "anonymous withdrawals", "pairs added", "Bitcoin AT", "BitcoinAT", "no fees", "promo", "exchange rate", "limited time", "promotion", "no fee", "trade before", "get improved", "eth-usd", "trading rate", "% improved", "up to 10", "by 10", "up to 1", "promotion", "percent improved", "percent better", "ether-usd", "zeroblock", "no trading fees", "investment programs", "investment program",
+    ~domain: ["twitter.com"]
+    action: filter
+    action_reason: "AutoMod rule section 1A - Blacklisted Words. Keyword detected: '{{match}}'."
+    modmail_subject: "Scam Warning - Blacklisted Words"
+    modmail: | 
+        This {{kind}} was filtered because it contains suspicious words associated with scams. Please investigate. 
+        
+                
+        **AutoMod Rule:** [Section 1A](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+        
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Keyword detected:** "{{match}}"
+        
+        **Original post body:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 1A-2 - Blacklisted Youtube Accounts
+type: submission
+media_author_url: ["UCkpMhY4N4ZjpqKMIjzLplKw","UCRQkQ8YlIY2LlTWGjdo1Opw","UCi7egjf0JDHuhznWugXq4hA"]
+action: remove
+action_reason: "Banned Spam Channel"
+        
+---
+###### Section 1B - Remove items containing the worst blacklisted words and posted by users with < 400 karma and < 1 year age.
+    type: submission
+    title+body : ["tezos"] #Reserve Words: "anonymous deposits", "anonymous deposit", "anonymous withdrawal", "anonymous withdrawals", "pairs added", "Bitcoin AT", "BitcoinAT", "no fees", "promo", "exchange rate", "limited time", "promotion", "no fee", "trade before", "get improved", "eth-usd", "trading rate", "% improved", "up to 10", "by 10", "up to 1", "promotion", "percent improved", "percent better", "ether-usd", "zeroblock", "no trading fees", "investment programs", "investment program",
+    action: remove
+    action_reason: "AutoMod rule section 1B - Remove items containing the worst blacklisted words and posted by users with < 400 karma and < 1 year age. Keyword detected: '{{match}}'."
+    author:
+        satisfy_any_threshold: true
+        comment_karma: '< 400'
+        account_age: '< 1 year'
+    modmail_subject: "Scam Warning - Blacklisted Words"
+    modmail: | 
+        This {{kind}} was removed because it contains suspicious words associated with scams and it was authored by a throwaway account.
+        
+                
+        **AutoMod Rule:** [Section 1B](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+        
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Keyword detected:** "{{match}}"
+        
+        **Original post body:**
+        
+        -
+        ***
+
+        -
+        {{body}}
+        
+        -
+        ***
+        
+---
+###### Section 2 - Blacklisted Domains
+    domain+body+title: ["xsigma-lab.medium.com", "uni-airdrop.org", "bit.emirex.com", "earnbet.io", "play.earnbet.io", "cryptocurrencyalerting.com", "currencytimes.co.in", "maxbit.cc", "cryptocrunchapp.com", "dappradar.com", "maxbit.cc", "earnbtc.cc", "chrisoncrypto.com", "btcpeers.com", "halvmining.online", "poly.market", "steal-usd.xyz", "tacharts.live", "defirev.com", "bridge.renproject.io", "blockchainresearch.in", "crypto-markets.news", "decentralised.co", "cryptonews18.xyz", "micky.com.au", "decrypt.co", "thecryptoassociate.com", "gocryptowise.com", "renproject.io", "ambcrypto.com", "bitcoinethereumnews.com", "thedisrupt.org", "itsblockchain.com", "uptrennd.com", "bzx.network", "lendf.me", "coinnounce.com", "cryptocurrency.us.aldryn.io", "tokenhell.com", "askrypto.com", "bitspark.io", "cryptothenews.com", "150sec.com", "crypto-digest.com", "u.today", "stmarket.co", "rondo.me", "cryptohopper.com", "myubi.global", "luvtoken.io", "blockference.com", "investreporthome.files.wordpress.com", "smartbotcoin.io", "tokensale.moozicore.com", "etherworld.co", "kaktana.com", "www.moonboi-shop.com", "gumeta.report", "blog.sportx.bet", "pack-of-crypto.com", "younited.io", "en.cryptonomist.ch", "cryptocointrade.com", "btcxlab.com", "bitbuy.ca", "cryptoguide.ch", "staken.io", "coinnewstelegraph.com", "shitcoinoffering.com", "cryptoninjas.net", "community.tradecipher.com", "bitgur.com", "blogspot.com", "ozie94.blogspot.com", "ccblog.live", "ledgerops.com", "fixglobal.com", "proof-of-news.com", "movetech.news", "ebay.com", "ourbitcoinnews.com", "whatabout.fun", "calltech.live", "newswise.live", "intelligenthq.com", "inwara.com", "boxmining.com", "cryptobuyersclub.co.uk", "ionixxtech.com", "1xbit.com", "ethex.bet", "techgate.news", "techtoday.live", "techtoday.family", "techdaily.live", "blogwith.news", "thenewblog.live", "blockgeeks.com", "blog.sfox.com", "morethan.news", "outlet.finance", "somethingdecent.co.uk", "temtum.com", "blog.digitalterminal.net", "digitalterminal.net", "combatnerd.com", "app.sportx.bet", "ampleforth.org", "syscoin.org", "crypp.to", "cryptodetail.com", "cryptolist.club", "coinspy.it", "chainbulletin.com", "comewcrypto.club", "blocksoar.news", "bitcointalk.org", "xcrypt.club", "cryptosyringe.com", "bitcoinexchangeguide.com", "setinblock.com", "eoswriter.io", "cryptodailly.news", "SwitchDex.ag", "buy7000btc.online", "coinfomania.com", "cryptopotato.com", "altcoinsidekick.com","rentry.co", "toks.tech", "techside.news", "getaurox.com", "SwitchDex.ag", "buy7000btc.online", "coinfomania.com", "cryptopotato.com", "altcoinsidekick.com", "anothercrypto.live", "blepcoin.com", "ahrvo.io", "cryptolawinsider.com", "pump.cash", "primexbt.com", "cryptopotato.news", "buycrypto.today", "papercrypto.io", "cryptodaily.co.uk", "cateredcontent.com", "bitrabbit.com", "onepagex.com", "cryptoadvocate.net", "eurobit.substack.com", "tokentalk.co", "cryptolauren.com", "coinmarket.rocks", "trustunion.com", "bitcoingarden.org", "news.bitcoin.com", "2xhr.com", "cryptoknowmics.com", "ambcrypto.com", "cryptowall.press", "bitpatron.co", "matic.systems", "countinghousefund.com", "jason-budd.com", "cntldr.com", "crypto-news-tldr.com", "cryptx.eu.com", "marketupdates.online", "taklimakan.network", "coinpublish.com", "whenmoon.chat", "ubecoin.com", "cryptowinstp.online", "cryptonewsguy.com", "prnewswire.com", "cryptoease.io", "lunarcrush.com", "weidex.market", "smartereum.com", "hatch-house.com", "dex.blue", "cryptonews.fun", "icoholder.com", "cryptolinks.com", "coinbeat.online", "whalereports.com", "thenextweb.com", "hodlbot.site", "hodlbotapp.club", "hodlbot.xyz", "hodlbot.club", "hodlbot.io", "cryptopotato.live", "todaysgazette.com", "koinpost.com", "cryptocurrencynews.design", "freegpumining.com", "publish0x.com", "blogbibox.com", "cryptimi.com", "coinwhalenews.com", "coin360.com", "news.8btc.com", "fetchai.io", "fetchai.tech", "fetchai.net", "fetchai.org", "cryptopurview.com", "tokeninvestoronline.com", "cryptocurrencies.ai", "cryptobulls.info", "cryptolinenews.com", "beachhead.com", "cryptodiffer.com", "ethercrash.io", "bitsgap.com", "traderschat.io", "cryptomenow.com", "hodlfinance.io", "cryptoslate.com", "hedgemaven.com", "aeternity.com", "forum.aeternity.com", "blog.aeternity.com", "coinrevolution.com", "mycoinrisk.com", "cryptocurrencyalerting.com", "micky.com.au", "thehodltimes.net", "mycoinrisk.com", "blog.xtrabytes.global", "airdroprating.io", "bitcoinist.com", "newconomy.media", "beincrypto.com", "cryptsort.com", "coinanalyst.investments", "blocksolution.io", "rados.io", "pipot.io", "blog.coinfabrik.com", "coinfi.com", "cointorox.com", "cryptonewz.online", "coinrivet.com", "sportcrypt.com", "coindiligent.com", "thecryptomerch.com", "findico.io", "cctube.pro", "cryptoupdate.ca", "besticoforyou.com", "7bitcoins.com", "nescrow.co", "opportunistictrader.com", "humbleoracle.com", "chainstate.org", "thecoinshark.net", "cheetahfinance.net", "heta.org", "cityfalcon.com", "coinbeat.com", "trybe.one", "cryptoblockwire.com", "bittpress.com", "egamers.io", "atozmarkets.com", "thetokenist.io", "cryptoautomators.com", "cryptonews24x7.net", "londonletter.org", "cryptoupclose.com", "hodlerxl.com", "apollodae.io", "cocoricos.io", "coincrunch.io", "bitmax.io", "crpotato.me", "encrybit.io", "captainaltcoin.net", "captainaltcoin.club", "captainaltcoin.info", "blokt.com", "captainaltcoin.info", "crypto-news.xyz", "zerocrypted.com", "blocktoken.ai", "block.loan", "biggi.co", "chainbits.com", "toshitimes.com", "base.info", "tuberinsider.info", "f0x.tips", "steemit.com", "bitrazzi.com", "crypto-economy.net", "coingape.co.uk", "coingape.xyz", "orvium.io", "allcoinposts.com", "thecoinrepublic.com", "nouvive.com", "ci.covesting.io", "blocklr.com", "bbod.io", "longhash.com", "maxcryptonews.com", "coindecipher.com", "cryptocrimson.com", "docs.google.com", "blackmooncrypto.com", "news.blackmooncrypto.com", "cryptonewsreview.com", "cryptoglobe.com", "cryptomurmur.com", "pumapay.io", "cryptoglobe.com", "funnyking.io", "xbt.net", "icobench.com", "theicojournal.com", "blockdelta.io", "view.ly", "coinpredictor.io", "coinlearningclub.com", "blox.io", "reddit.com/r/SkynetOpenNetwork", "cryptobriefing.com", "bitcoinafrica.io", "algory.io", "app.algory.io", "demo.algory.io", "coincodex.com", "coinfrenzy.io", "cryptovest.com", "dclblogger.com", "freecrypto.me", "blogforbitcoin.com", "fortunepandas.io", "71republic.com", "cryptobulletin.in", "cryptoground.com", "livebitcoinnews.com", "bcfocus.com", "ourex.io", "btcnn.com", "myidleincome.com", "thebusinessofcrypto.com", "cryptotrader.tax", "101blockchains.com", "ethereumcashpro.com", "coinness.info", "coinmunity.com", "globalcryptopress.com", "exitscam.me", "cointelligence.com", "ledgeble.com", "blockchainappfactory.com", "dailyhodl.news", "dailyhodl.com", "news.livecoinwatch.com", "livecoinwatch.com", "dna.coinve.st", "hadeplatform.com", "cointopper.com", "cryptomag.press", "coins.newbium.com", "coinrevolution.com", "ryanyosua.me", "investinblockchain.com", "globalowls.com", "cryptomonster.net", "fintechcryptonews.com", "samcrypto.net", "blockmanity.com", "bitbetterhavemymoney.com", "wallstreethodl.com", "crypviz.io", "chainstate.org", "satoshi.blog", "sludgefeed.com", "bitcoinforbeginners.io", "cryptoiscoming.com", "telegra.ph", "newsbtc.com", "chepicap.com", "powhcoin.com", "etheress.net", "eth2usd.com", "futurether.com", "flyether.com", "ethereumexchange.net", "ninether.com", "livecoinchart.net", "bitcoinlondon.org", "stratoon.net", "btclondon.org", "ethsale.com", "monerochart.com", "bitcoinat.co.uk", "bitcoina.trade", "github.com/etherwallcore", "ethbazaar.net", "etherbazaar.trade", "etherlimited.com", "etherltd.trade", "ltdether.trade", "ethwallet.co.uk", "akashaproject.io", "attrading.website", "bitcoinatrade.com", "bitcoinxchng.website", "bazcrypto.online", "srbits.info", "amazon.com/Ethereum-Black-Diamond-Spread-Silver", "bbitsu.info", "changecrypto.info", "scrypto.info", "sbtc.world", "cryptowall.info", "bitcoinss.date", "sbitcoin.date", "buysomebitcoins.com", "srbtc.info", "bitcoinchng.info", "bitcoinchng.info", "surb.racing", "www.xeth.io", "youtu.be/zp5wL9HNWjU", "mobilegoproject.io", "surb.racing", "bitcoinatrade.com", "btcs.life", "cryptoxtrade.world", "btcs.life", "cryptoxtrade.world", "attrading.website", "bazarbitcoin.trade", "bitcoinxchng.website", "limitedeth.trade", "bitcoinbaz.website", "bitcoinbaz.website", "xethereum.press", "ethereumchamber.net", "tradeblocks.io", "t.me/trexpumper", "tezos.com.co", "tezos.com", "myetherwallet.com.co", "com.co", "coinpump.group", "symantecblog.com", "cryptocelebrities.co", "westerndawn.infos.st", "celer.live", "thenewblog.live"]
+    ~domain+body+title: ["github.com/ethereum/", "github.com/ethcore/", "github.com/consensys", "github.com/nexusdev", "github.com/pipermerriam", "github.com/ethereumjs", "github.com/iurimatias", "rolandkofler.github.io/flipper", "steemit.com", "media.consensys.net"] # Whitelisted Domains
+    action: spam
+    action_reason: "AutoMod rule section 2 - Domain Blacklist. Domain detected: '{{match}}'."
+    modmail_subject: "Scam Warning - Blacklisted Domain"
+    modmail: |
+        *** **DO NOT APPROVE THIS.** ***
+        
+        This {{kind}} was caught because it links to a blacklisted domain.
+        
+        Odds are it is either some form of spamming, shilling, scamming, manipulating, or all of the above and the OP should be banned. 
+                 
+        **AutoMod Rule:** [Section 2](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+        
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **URL:** {{url}} | **Domain detected:** "{{match}}"
+              
+        **Original post body:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+---
+###### Section 2 - Filter Domains
+    domain+body+title: ["plus.google.com", "https://circles.garden/profile/"]
+    action: filter
+    action_reason: "AutoMod rule section 2 - Domain Filtered. Domain detected: '{{match}}'."
+    modmail_subject: "Warning - Filtered Domain"
+    modmail: |
+        This {{kind}} was filtered because it links to a filtered domain. 
+                 
+        **AutoMod Rule:** [Section 2](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+        
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **URL:** {{url}} | **Domain detected:** "{{match}}"
+              
+        **Original post body:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+---
+###### Section 2A - Content Theft Domain Blacklist
+    domain+body+title: ['goodnews786.com', 'allcryptocurrencies.news']
+    action: spam
+    action_reason: 'AutoMod rule section 2A - Content Theft Domain Blacklist.'
+    
+---
+###### Section 2B - Fake News Domain Blacklist
+    domain+body+title: ["bitflikz.com"]
+    action: spam
+    action_reason: 'AutoMod rule section 2B - Fake News Domain Blacklist.'
+
+---
+###### Section 2B - Fake News Domain Blacklist
+    domain+body+title: ["cryptoanalyst.co", "samcrypto.com", "cryptodisrupt.com"]
+    action: spam
+    action_reason: 'AutoMod rule section 2B - Spam News Domain Blacklist.'
+
+---
+###### Section 2C - Malware Domain Blacklist
+    domain+body+title: ["tradeblocks.io"]
+    action: spam
+    action_reason: 'AutoMod rule section 2C - Malware Domain Blacklist'
+
+--- 
+###### Section 2D - Blacklisted Domain Suffixes
+    domain (ends-with): [".trade", ".sale"]
+    ~domain: ["teachmehowto.trade"]
+    action: filter 
+    action_reason: 'Generated by AutoMod rule section 2D - Blacklisted Domain Suffixes.'
+    modmail_subject: "Scam Warning - Blacklisted Domain Suffixes"
+    modmail: |
+        This {{kind}} was filtered because it contains a domain suffix commonly associated with scams. Please investigate.
+        
+        **AutoMod Rule:** [Section 2D](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+         
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **URL:** {{url}} | **Domain suffix detected:** "{{match}}"
+        
+        **Original post body:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---            
+
+###### Section 3 - Blacklisted Comment Words - I reactivated to catch Bitcoin A  Trade comments faster. - _CapR_
+#    type: comment
+#    body (case-sensitive): ["0xBTC", "0xBtc", "0xBitcoin", "Bitcoin AT",  "BitcoinAT", "EtherWall", "Ether Wall", "Ether Wall Core", "EtherWallCore", "no trading fees", "Bitcoin A-Trade", "and arbitrage", "Bitcoin A-trade", "Bitcoin A Trade", "Bitcoin AT"] 
+#    ~body: ["myetherwallet"]
+#   body (includes): [""anonymous deposits", "anonymous deposit", "anonymous withdrawal", "anonymous withdrawals", "% better", "promo", "limited time",  "no fee", "trade before", "get improved", "trading rate", "% improved", "up to 10", "by 10", "up to 1", "ether-usd", "no fees",]  
+#    author:
+#        satisfy_any_threshold: true
+#        comment_karma: '< 500'
+#        account_age: '< 1 year'
+#    action: filter
+#    action_reason: "AutoMod rule section 3 - Blacklisted Comment Words for accounts under 500 comment karma and 1 year account age."
+#    modmail_subject: "Scam Warning - Blacklisted Comment Words."
+#    modmail: |
+#        This comment was filtered because it contains suspicious words associated with scams. 
+#        
+#        -
+#        ---
+#
+#        -
+#        **Submission Title and Permalink:** "[{{kind}}]({{permalink}})"
+#        
+#        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_css_class}}
+        
+#        **Domain:** {{domain}} | **URL:** {{url}}
+#        
+#        **Original post body:**
+#        
+#        {{body}}
+#        
+#        [AutoMod config - section 3](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator).
+#
+#        -
+
+--- 
+###### Section 4 - Blacklisted Domain Suffixes
+    type: comment
+    body : ['\.trade'] #'\.co\.uk',
+    ~body : ['teachmehowto.trade/PoloData', '..trade']
+    action: filter
+    action_reason: 'Generated by AutoMod rule section 4 - Blacklisted Domain Suffixes.'
+    modmail_subject: "Scam Warning - Blacklisted Domain Suffixes"
+    modmail: |
+        This comment was filtered for containing a blacklisted domain suffix commonly associated with scams. Please investigate.
+        
+        **AutoMod Rule:** [Section 4](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+        
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **URL:** {{url}} | **Domain Suffix Detected:** "{{match}}"       
+        
+        **Original post body:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 5 - Malware Detection
+    type: comment
+    body (includes): ["Win32.Trojan.WisdomEyes.", "Backdoor/Win32.Oztar."]
+    #parent_submission:
+    action: filter
+    action_reason: "AutoMod rule section 5 - Malware."
+    modmail_subject: "Scam Warning - Malware"
+    modmail: |
+        This comment whas filtered because it potentially links to malware. Please investigate. 
+        
+        **AutoMod Rule:** [Section 5](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+          
+        **Keyword Detected:** "{{match}}"
+        
+        **Original post body:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 6 - Link Shorteners
+    type: any
+    domain: [git.io, 0rz.tw, 0rz.tw, 1-url.net, 1link.in, 1tk.us, 1un.fr, 1url.com, 1url.cz, 1wb2.net, 2.gp, 2.ht, 2ad.in, 2big.at, 2doc.net, 2fear.com, 2pl.us, 2tu.us, 2ty.in, 2u.xf.cz, 2ya.com, 3.ly, 3ra.be, 3x.si, 4i.ae, 4ms.me, 4sq.com, 4url.cc, 4view.me, 5em.cz, 5url.net, 5z8.info, 6fr.ru, 6g6.eu, 6url.com, 7.ly, 7fth.cc, 7li.in, 7vd.cn, 8u.cz, 76.gd, 77.ai, 98.to, 126.am, 307.to, 944.la, a.gg, a.nf, a0.fr, a2a.me, aa.cx, abbr.sk, abbrr.com, abcurl.net, ad-med.cz, ad.vu, ad5.eu, ad7.biz, adb.ug, adcraft.co, adcrun.ch, adf.ly, adfa.st, adfly.fr, adjix.com, adli.pw, adv.li, afx.cc, ajn.me, aka.gr, alil.in, all.fuseurl.com, alturl.com, amzn.to, any.gs, aqva.pl, ar.gy, ares.tl, arst.ch, asso.in, atu.ca, au.ms, ayt.fr, azali.fr, azc.cc, b00.fr, b2l.me, b23.ru, b54.in, bacn.me, baid.us, bc.vc, bcool.bz, bee4.biz, bfy.tw, bim.im, binged.it, bit.do, bit.ly, bitly.com, bitw.in, bizj.us, bkite.com, blap.net, ble.pl, blip.tv, bloat.me, boi.re, bote.me, bougn.at, br4.in, bravo.ly, brk.to, brzu.net, bsa.ly, budurl.com, buk.me, bul.lu, burnurl.com, buzurl.com, bxl.me, bzh.me, c-o.in, cachor.ro, canurl.com, captur.in, catchylink.com, cbs.so, cbug.cc, cc.cc, ccj.im, cf.ly, cf2.me, cf6.co, chilp.it, chzb.gr, cjb.net, cl.lk, cl.ly, clck.ru, cli.gs, cliccami.info, clickmeter.com, clickthru.ca, clikk.in, clop.in, cn86.org, conta.cc, cort.as, cot.ag, couic.fr, cr.tl, crisco.com, crks.me, ctvr.us, cudder.it, cur.lv, curl.im, cut.pe, cut.sk, cutt.eu, cutt.us, cutu.me, cuturl.com, cybr.fr, cyonix.to, d75.eu, daa.pl, dai.ly, db.tt, dd.ma, ddp.net, decenturl.com, dfl8.me, dft.ba, digbig.com, digg.com, disq.us, dld.bz, dlvr.it, do.my, doiop.com, dolp.cc, dopen.us, dopice.sk, droid.ws, dv.gd, dwarfurl.com, dy.fi, dyo.gs, e37.eu, easyuri.com, easyurl.com, easyurl.net, ecra.se, eepurl.com, ely.re, erax.cz, erw.cz, esyurl.com, eweri.com, ewerl.com, ex9.co, ezurl.cc, fa.b, fa.by, fav.me, fb.me, fbshare.me, ff.im, fff.re, fff.to, fff.wf, fhurl.com, filoops.info, filz.fr, fire.to, firsturl.de, firsturl.net, flic.kr, flq.us, fly2.ws, fnk.es, foe.hn, folu.me, fon.gs, freak.to, freze.it, fur.ly, fuseurl.com, fuzzy.to, fwd4.me, fwib.net, g.ro.lt, g00.me, gg.gg, gizmo.do, gl.am, go.9nl.com, go.ign.com, go.usa.gov, go2.me, go2cut.com, goo.gl, goo.lu, google.com/url, goshrink.com, gowat.ch, grem.io, gri.ms, guiama.is, gurl.es, hadej.co, hellotxt.com, hex.io, hide.my, hiderefer.com, hjkl.fr, hmm.ph, hops.me, hover.com, href.in, href.li, hsblinks.com, ht.ly, htxt.it, huff.to, hugeurl.com, hurl.it, hurl.me, hurl.ws, i-2.co, i99.cz, icanhaz.com, icit.fr, ick.li, icks.ro, idek.net, iguang.tw, iiiii.in, iky.fr, ilix.in, info.ms, inreply.to, is.gd, iscool.net, isra.li, iterasi.net, itm.im, its.my, ity.im, ix.lt, ix.sk, j.gs, j.mp, jdem.cz, jieb.be, jijr.com, jmp2.net, jp22.net, jqw.de, just.as, kask.us, kd2.org, kfd.pl, kissa.be, kl.am, klck.me, korta.nu, kr3w.de, krat.si, kratsi.cz, krod.cz, krunchd.com, kuc.cz, kxb.me, l-k.be, l.gg, l9.fr, l9k.net, lat.ms, lc-s.co, lc.cx, lcut.in, lemde.fr, libero.it, lick.my, lien.li, lien.pl, liip.to, liltext.com, lin.cr, lin.io, linkbee.com, linkbun.ch, linkn.co, liurl.cn, llu.ch, ln-s.net, ln-s.ru, lnk.co, lnk.gd, lnk.in, lnk.ly, lnk.ms, lnk.sk, lnkd.in, lnks.fr, lnkurl.com, lnky.fr, lnp.sn, loopt.us, lp25.fr, lru.jp, lt.tl, lurl.no, lvvk.com, m1p.fr, m3mi.com, macte.ch, make.my, mash.to, mcaf.ee, mdl29.net, merky.de, metamark.net, mic.fr, migre.me, minilien.com, miniurl.com, minu.me, minurl.fr, mke.me, moby.to, moourl.com, more.sh, mrte.ch, mut.lu, myloc.me, myurl.in, n.pr, nbc.co, nblo.gs, ne1.net, net.ms, net46.net, nicou.ch, nig.gr, njx.me, nn.nf, not.my, notlong.com, nov.io, nq.st, nsfw.in, nutshellurl.com, nxy.in, nyti.ms, o-x.fr, oc1.us, okok.fr, om.ly, omf.gd, omoikane.net, on.cnn.com, on.mktw.net, onforb.es, orz.se, ou.af, ou.gd, oua.be, ow.ly, p.pw, para.pt, parky.tv, past.is, pd.am, pdh.co, ph.ly, pic.gd, pic.gd tweetphoto, pich.in, pin.st, ping.fm, piurl.com, pli.gs, plots.fr, pm.wu.cz, pnt.me, po.st, politi.co, poprl.com, post.ly, posted.at, pp.gg, ppfr.it, ppst.me, ppt.cc, ppt.li, prejit.cz, prettylinkpro.com, profile.to, ptab.it, ptiturl.com, ptm.ro, pub.vitrue.com, pw2.ro, py6.ru, q.gs, qbn.ru, qicute.com, qlnk.net, qqc.co, qqurl.com, qr.ae, qr.net, qrtag.fr, qte.me, qu.tc, quip-art.com, qxp.cz, qxp.sk, qy.fi, r.im, rb6.co, rb6.me, rcknr.io, rdz.me, read.bi, readthis.ca, reallytinyurl.com, redir.ec, redir.fr, redirects.ca, redirx.com, redu.it, ref.so, reise.lc, relink.fr, retwt.me, ri.ms, rickroll.it, riz.cz, riz.gd, rod.gs, roflc.at, rsmonkey.com, rt.nu, rt.se, ru.ly, rubyurl.com, rurl.org, rww.tw, s-url.fr, s4c.in, s7y.us, s7y.us shrinkify, safe.mn, sagyap.tk, sameurl.com, scrnch.me, sdu.sk, sdut.us, seeme.at, segue.se, sh.st, shar.as, shar.es, sharein.com, sharetabs.com, shink.de, shorl.com, short.cc, short.ie, short.nr, short.pk, short.to, shortlinks.co.uk, shortna.me, shorturl.com, shoturl.us, shout.to, show.my, shrinkify.com, shrinkr.com, shrinkster.com, shrt.fr, shrt.in, shrt.st, shrten.com, shrunkin.com, shw.me, shy.si, sicax.net, simurl.com, sina.lt, sk.gy, skr.sk, skroc.pl, slate.me, smallr.com, smll.co, smsh.me, smurl.name, sn.im, snipr.com, snipurl.com, snsw.us, snurl.com, soo.gd, sp2.ro, spedr.com, spn.sr, sq6.ru, sqrl.it, srnk.net, srs.li, ssl.gs, starturl.com, sturly.com, su.pr, surl.co.uk, surl.hu, surl.me, sux.cz, sy.pe, t.cn, t.lh.com, ta.gd, tabzi.com, tau.pe, tbd.ly, tcrn.ch, tdjt.cz, tgr.me, tgr.ph, thesa.us, thrdl.es, tighturl.com, tin.li, tini.cc, tiniuri.com, tiny.cc, tiny.lt, tiny.ly, tiny.ms, tiny.pl, tiny123.com, tinyarro.ws, tinyarrows.com, tinylink.in, tinytw.it, tinyuri.ca, tinyurl.com, tinyurl.hu, tinyvid.io, tixsu.com, tl.gd, tldr.sk, tllg.net, tmi.me, tnij.org, tnw.to, tny.com, tny.cz, to.ly, to8.cc, togoto.us, tohle.de, totc.us, toysr.us, tpm.ly, tpmr.com, tr.im, tr.my, tr5.in, tra.kz, traceurl.com, trck.me, trick.ly, trkr.ws, trunc.it, turo.us, tweetburner.com, tweez.me, twet.fr, twhub.com, twi.im, twirl.at, twit.ac, twitclicks.com, twitterpan.com, twitterurl.net, twitterurl.org, twitthis.com, twiturl.de, twlr.me, twurl.cc, twurl.nl, u.bb, u.mavrev.com, u.nu, u.to, u6e.de, u76.org, ub0.cc, uby.es, ucam.me, ug.cz, ulmt.in, ulu.lu, unlc.us, updating.me, upzat.com, ur1.ca, url.az, url.co.uk, url.ie, url2.fr, url4.eu, url5.org, url360.me, urlao.com, urlborg.com, urlbrief.com, urlcover.com, urlcut.com, urlenco.de, urlhawk.com, urli.nl, urlin.it, urlkiss.com, urlot.com, urlpire.com, urls.fr, urls.im, urlshorteningservicefortwitter.com, urlx.ie, urlx.org, urlz.fr, urlzen.com, urub.us, usat.ly, use.my, utfg.sk, v.gd, v.ht, v5.gd, vaaa.fr, valv.im, vaza.me, vb.ly, vbly.us, vd55.com, verd.in, vgn.am, vgn.me, viralurl.biz, viralurl.com, virl.com, virl.ws, vl.am, vm.lc, vov.li, vsll.eu, vt802.us, vur.me, vurl.bz, vv.vg, vzturl.com, w1p.fr, w3t.org, w55.de, waa.ai, wapo.st, wapurl.co.uk, wb1.eu, web99.eu, wed.li, wideo.fr, wipi.es, wp.me, wtc.la, wu.cz, ww7.fr, wwy.me, x.co, x.nu, x.se, x.vu, x2c.eu, x2c.eumx, x10.mx, xaddr.com, xav.cc, xeeurl.com, xgd.in, xib.me, xl8.eu, xn--hgi.ws, xoe.cz, xr.com, xrl.in, xrl.us, xt3.me, xua.me, xub.me, xurl.es, xurl.jp, xurls.co, xzb.cc, y.ahoo.it, yagoa.fr, yagoa.me, yatuc.com, yau.sh, ye.pe, yeca.eu, yect.com, yep.it, yfrog.com, yhoo.it, yiyd.com, yogh.me, yon.ir, youfap.me, yourls.org, ysear.ch, yuarel.com, yweb.com, yyv.co, z0p.de, z9.fr, zapit.nu, zeek.ir, zi.ma, zi.mu, zi.pe, zip.net, zipmyurl.com, zkr.cz, zkrat.me, zkrt.cz, zoodl.com, zpag.es, zsms.net, zti.me, zud.me, zurl.ws, zxq.net, zyva.org, zz.gd, zzang.kr, zzb.bz, ›.ws, t1p.de, shrink.pt]
+    ~title: ["Daily General Discussion"]
+    action: filter
+    action_reason: 'AutoMod rule section 6 - Link Shortener. Domain detected "{{match}}".'
+    modmail_subject: "Scam Warning - Link Shorteners"
+    modmail: |
+       This {{kind}} was filtered because it contains a link shortener/proxy address commonly used to mask scam links. Please investigate.
+       
+        **AutoMod Rule:** [Section 6](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+         
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **URL:** {{url}} | **Domain Detected:** "{{match}}"
+       
+        **Original post body:**
+
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+    
+---
+###### Section 6A
+#    title: ["ether.camp", "EtherCamp", "Ether Camp"]
+#    modmail_subject: "Check For Suspicious Upvotes"
+#    modmail: 'The above submission by "/u/{{author}}", with title "{{title}}" might be getting upvoted by puppet accounts. Immediatly check to see how many upvotes the submission has within 1-3 minutes after it being posted. If there is a suspiciously high number of upvotes, tag the submission with *SUSPICIOUS UPVOTES* flair or sticky a comment in the comment section warning the readers. This notification was generated by Section 6 in the AutoMod config.'  
+    
+---
+###### Section 7
+#    domain (ends-with): [".camp"]
+#    modmail_subject: "Check For Suspicious Upvotes"
+#    modmail: 'The above submission by "/u/{{author}}", with title "{{title}}" might be getting upvoted by sock puppet accounts. Immediatly check to see how many upvotes the submission has within 1-3 minutes of it being posted. If there is a suspicious number of upvotes, tag the submission with *SUSPICIOUS UPVOTES* link-flair or sticky a comment in the comment section warning the readers. This notification was generated by Section 7 in the AutoMod config.'
+    
+---
+##### Section 8 - Sockpuppet Detection - meant to detect puppet accounts of newweeknewacct - do not comment out
+    type: comment
+    body (includes): ["4fraud"]
+    ~body (includes): ["r/ethereumfraud", "/r/ethereumfraud"]
+    action: filter
+    action_reason: 'AutoMod rule section 8 - Sockpuppet Detection.' 
+    modmail_subject: "Sockpuppet Detection"
+    modmail: |
+        This comment was filtered because the author might be a sock puppet account. Please investigate. 
+        
+        **AutoMod Rule:** [Section 8](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+        
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Keyword Detected:** {{match}}
+         
+        **Original post body:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+### CONTENT CONTROL   
+###### Section 10-B - Karma and Age Requirements - Removes text posts which break age rules and whitelists accounts.
+    type: submission
+    author:
+        is_gold: false
+        satisfy_any_threshold: true
+        comment_karma: '< 20'
+        account_age: '< 10 days'
+        ~name: ["GDAX-Michael","gdax_john", "gdax-jason", "gdax-jason", "coinbase_Rosey", "coinbase-john", "coinbase_jason", "coinbase_josh", "justin_coinbase", "throwaway93920102", "fullybak3d", "wearn601", "alexwearn", "MillennialChris", "ArcadeCityJenny", "ArcadeSlade", "kikipluche", "sponnet", "kingflurkel", "Ben_AC", "HashFairGames", "stefanzyrafa", "jason_granger", "CryptoCurrency_News", "kraken-josh", "kraken-mike", "kraken-robert", "kraken-alan", "kraken-eliah","kraken-daniel","kraken-thomas", "takopon", "krakenexchange", "Ethfinance_Mod", "sowreckd2", "crypto-pawn", "GroupGnosis", "stefan_d_george", "cryptoecon", "denisgranha", "kraken-nathan", "rawzeee", "kraken-colin", "kraken_Marlena", "Kraken-Gina", "kraken-pug", "kraken-nathan", "kraken-steve", "kraken-steve", "kris-monaco", "localethereumMichael", "wondot", "lfc052505", "money_stuff", "RichyBC", "ethfanman", "ETHcited", "cryptotradebot", "CryptoMods", "dt_MEW", "gforgru", "EthRegBot", "Frescalal", "Saifu-Evgeny", "rec_tipper", "rec_curator", "rec_just_a_messenger", "Tommy123hold", "51pctCryptoResearch", "Anduril1986", "PM_ME_YOUR_POINTS", "CommunityPoints", "GotCannedTA", "Hiturunk", "sshelton76", "blockduane", "breakingeth", "EthBannerBot", "Compound_Team"] # "AutoModerator"
+    action: remove
+    action_reason: 'AutoMod rule section 10-B - Karma and Age Requirements.' 
+    message_subject: "Karma and Age Requirements"
+    message: |
+        Greetings /u/{{author}}. Welcome the /r/ethfinance! We can see that you're new here and we're anxious to hear what you have to say. Unfortuantely, your [{{kind}}]({{permalink}}) was removed because it did not meet our karma and age requirements. Due to abuses in the past we require accounts to have at least 10 days age and 20 **comment** karma to submit content on /r/Ethfinance. This rule is intended to mitigate abuse (spam, manipulation, trolling) from throwaway accounts and is strictly enforced for submissions (posts).
+
+---
+###### Section 10-C - Karma and Age Requirements - Removes comments which break age rules and whitelists accounts.
+    type: comment
+    author:
+        is_gold: false
+        satisfy_any_threshold: true
+        comment_karma: '< 5'
+        account_age: '< 10 days'
+        ~name: ["GDAX-Michael","gdax_john", "gdax-jason", "gdax-jason", "coinbase_Rosey", "coinbase-john", "coinbase_jason", "coinbase_josh", "justin_coinbase", "throwaway93920102", "fullybak3d", "wearn601", "alexwearn", "MillennialChris", "ArcadeCityJenny", "ArcadeSlade", "kikipluche", "sponnet", "kingflurkel", "Ben_AC", "HashFairGames", "stefanzyrafa", "jason_granger", "CryptoCurrency_News", "kraken-josh", "kraken-mike", "kraken-robert", "kraken-alan", "kraken-eliah","kraken-daniel","kraken-thomas", "takopon", "krakenexchange", "Ethfinance_Mod", "sowreckd2", "crypto-pawn", "GroupGnosis", "stefan_d_george", "cryptoecon", "denisgranha", "kraken-nathan", "rawzeee", "kraken-colin", "kraken_Marlena", "Kraken-Gina", "kraken-pug", "kraken-nathan", "kraken-steve", "kraken-steve", "kris-monaco", "localethereumMichael", "wondot", "lfc052505", "money_stuff", "RichyBC", "ethfanman", "ETHcited", "cryptotradebot", "CryptoMods", "dt_MEW", "gforgru", "EthRegBot", "Frescalal", "Saifu-Evgeny", "rec_tipper", "rec_curator", "rec_just_a_messenger", "eBCHCoin", "Tommy123hold", "51pctCryptoResearch", "Anduril1986", "PM_ME_YOUR_POINTS", "CommunityPoints", "GotCannedTA", "Hiturunk", "sshelton76", "blockduane", "breakingeth", "EthBannerBot", "Compound_Team"] # "AutoModerator"
+    ~body: ["where to", "where can", "how do", "how can", "how to", "need some help", "need help", "why is it", "assistance needed", "appreciated it",  "How is this possible"]
+    action: remove
+    action_reason: 'AutoMod rule section 10-C - Karma and Age Requirements.' 
+    message_subject: "Karma and Age Requirements"
+    message: |
+        Greetings /u/{{author}}. Welcome the /r/ethfinance! We can see that you're new here and we're anxious to hear what you have to say. Unfortuantely, your [{{kind}}]({{permalink}}) was removed because it did not meet our karma and age requirements. Due to abuses in the past we require accounts to have at least 10 days age and 20 **comment** karma to submit content on /r/Ethfinance. This rule is intended to mitigate abuse (spam, manipulation, trolling) from throwaway accounts and is strictly enforced for submissions (posts). However, we really do welcome comments from new accounts when they contribute to the conversation or are appropriate to the subreddit. Your comment can be approved by dm'ing [u/jtnichol](https://www.reddit.com/message/compose/?to=jtnichol&subject=ethfinance%20comment%20approval&message=please%20approve%20{{permalink}}!), or [u/ruvalm](https://www.reddit.com/message/compose/?to=ruvalm&subject=ethfinance%20comment%20approval&message=please%20approve%20{{permalink}}!).
+
+
+
+---
+###### Section 11 - Reports potential inflammatory/unconstructive political commentss.
+#    type: comment
+#    body : ["donald", "Obama", "Republicans", "Democrats", "GOP", "Dems", "ACA", "healthcare act", "healthcare bill", "MLP", "Marine Le Pen", "net neutrality", "FCC", "white house", "trumpcoin", "altright", "alt-right", "impeach"]
+#    action: report
+#    report_reason: "AutoMod rule section 11 - Potentially inflammatory/unconstructive political comments. Keyword detected: '{{match}}'."
+#    modmail_subject: "Politics"
+#    modmail: |
+#        The following item was reported because it might be injecting inflammatory politics into discussion. Please investigate. Approve if the comment is relevant to market analysis. Remove if the comment is ideological or dogmatic.
+
+#       **AutoMod Rule:** [Section 11](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+       
+#       **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+       
+#       **Author:** /u/{{author}} | **Flair Text:** {{author_flair_css_class}}
+        
+#       **Domain:** {{domain}} | **URL:** {{url}}
+         
+#        **Original post body:**
+        
+#        -
+#        ---
+
+#        -
+#        {{body}}
+        
+#        -
+#        ---
+ 
+---  
+###### Section 12 - Offensive Language - Reports comments or submissions which might cointain offensive language.
+    title+body: ["nigg(er|a)?s?","negros?","fagg?(y|[eio]t)?(ry|s)?","sluts?","whores?","trann(y|ie)s?","wetbacks?","gooks?","porch[ -]?monke(y|ies)", "gooks?", "shemale", "honk(ey|ie)", "beaners?", "spi(c|k|ck)s?","cock-?suck?(er|ed|ing)?s","fuck(in|ing)[-]?fagg?(y|[eio]t)?(ry|s)?"]
+    action: report
+    action_reason: 'AutoMod rule section 12. - Offensive Language. Keyword detected: "{{match}}".'
+    
+---
+###### Section 13A - No-Participation URL Enforcement
+    type: submission
+    url+body : ["(?<!np\\.)reddit\\.com/r/[^/]+/comments/[\\w%/-]+"]
+    action: remove
+    action_reason: 'AutoMod rule section 13. - No-Participation URL Enforcement.'
+    message: |
+        To prevent vote brigades, your {{kind}} was automatically removed because you linked to reddit without using the "no-participation" domain.  Reddit links should use "np.reddit.com" and not "www.reddit.com". Please use "http://np.{{match-url+body}}" instead.
+
+---
+###### Section 13B - Filter URLs drected at /r/Investing. See: https://mod.reddit.com/mail/new/26ldi. - _CapR_
+    type: any
+    ~url: ["np.reddit.com/r/Investing/comments"]
+    author:
+        is_gold: false
+        ~name: [""] # Whitelist for /r/Investing URLs.
+    moderators_exempt: true
+    action: filter
+    modmail_subject: "Filtered /r/Investing URLs to prevent brigading."
+    modmail: |
+        This {{kind}} was filtered because it linked to /r/Investing and might have incited a brigade. For more details, please read this prior [mod discussion](https://mod.reddit.com/mail/new/26ldi). Send usernames of brigaders to /r/Ivesting.
+       
+        **AutoMod Rule:** [Section 13B](https://www.reddit.com/r/ethfinance/wiki/edit/config/automoderator)
+       
+        **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+       
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+         
+        **Original post body:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14 - Removes short self-text submissions under 25 characters.
+    type: text submission
+    body_shorter_than: 100 
+    action: remove  
+    action_reason: "Removed for making short text submission. AutoMod rule section 14."
+    #modmail: "This self submission has less than 25 characters in it's text body. Review to determine if it is better suited as a comment in the Daily Discussion thread."
+    message:   'Your text submission has a low word count.  Please consider reposting your submission as a comment in the Daily Discussion thread or adding more content to your submission. The Daily Discussion thread comments are sorted by newest first so your comment will receive a fair level of visibility.'  
+
+---
+###### Section 15 - Trade Listing Removal
+    title: ["WTS", "WTB", "WTT", "willing to sell", "willing to buy", "willing to trade", "PM me", "send me a PM", ]
+    action: remove
+    action_reason: 'AutoMod rule section 15. - Trade Listing Removal. Keyword detected: "{{match}}".'
+    message: 'This is not exchange subreddit. Sell & Buy posts should be posted on /r/CryptoTrade, /r/REPTrader, or other related subreddits. If this AutoModerator action was wrong, please message the mods.' 
+
+---
+###### Section 19A - Remove posts/comments from accounts with -50 karma. Refer trolls to /r/CryptoMarkets thread.
+    author:
+        comment_karma: "< -10"
+    action: remove
+    action_reason: 'AutoMod rule section 19A - Remove posts/comments from accounts with -50 karma. Refer troll activity to the /r/CryptoMarkets Trollbox thread.'
+    message: 'We encourage pumping, venting, trolling, or any other similar behavior to be moved to the /r/CryptoMarkets trollbox thread. To visit this thread, [follow this link](https://www.reddit.com/r/CryptoMarkets/search?q=Trollbox+Thread&sort=new&restrict_sr=on&t=all) and choose the latest entry on the search page.'
+    
+---
+###### Section 19B - Remove troll post/comments. Refer troll behavior to /r/CryptoMarkets Trollbox thread.
+    body: ["To the moon!", "lambo"]
+    ignore_blockquotes: true
+    author:
+        satisfy_any_threshold: true
+        comment_karma: '< 50'
+        account_age: '< 30 days'
+    action: remove
+    action_reason: 'AutoMod rule section 19B - Remove troll comments from users with < 50 karma and < 30 days account age. Satisfy any threshold. Refer this activity to the /r/CryptoMarkets. Keyword detected: "{{match}}".'
+    message: 'Pumping, venting, trolling, "lambos", "to the moon" or any other similar behavior, will not be tolerated from unestablished accounts.'  
+---
+###### Section 20 = Sort Daily Discussion threads comments by newest first.
+    author: Automoderator
+    set_suggested_sort: new
+    type: submission
+    title (regex, includes): ["Daily", "Weekly"]
+    
+---
+###### Section 20A - Detects submissions linking to Google Docs. Pins comment warning about privacy risks.
+    type: any
+    domain: ["docs.google.com"]
+    set_flair: ["Privacy Risks","Warning"]
+    action_reason: "Section 20A - Detects submissions linking to Google Docs. Pins comment warning about privacy risks."
+    comment_stickied: true
+    comment: |
+         Exercise caution when using Google Docs spreadsheets. They can be used to mine personal information from you if you are logged into Google.
+
+         ***
+
+         If this automated message was in error, please [message the mods](https://www.reddit.com/message/compose?to=%2Fr%2FEthFinance). 
+    
+---
+###### Section 20B - Remove content from annoying bots.
+#    author:
+#        name: [bartonvodka, ConvertsToMetric, HelperBot_, mentionhelper, notahelpfulbot, TotesMessenger, you_get_CMV_delta, youtubefactsbot, ayylmao2dongerbot-v2, yourewelcome_bot, giphy, GfycatOfficialBot]
+#    action: spam
+#    action_reason: "Potential bot spam. Manually approve. AutoMod rule section 20B."
+
+
+### USER REPORTING
+#### First Tier Submission Report Rules
+---
+###### Section 14A-1 - Submission has 4+ Reports and below thresholds.   
+    reports: 4
+    type: submission
+    action: remove
+    author:       
+        comment_karma: '< 250'
+        account_age: '< 2 months'
+        satisfy_any_threshold: true
+        is_contributor: false
+        is_gold: false
+    action: filter
+    action_reason: 'Section 14A-1 - Auto filter submissions reported 4 times with < 250 comment karma and/or 2 months account age.'
+    modmail_subject: '5+ reports - Submission filtered. '
+    modmail: |
+        **AutoMod Rule:** [Section 14A-1](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 4+ reports. < 250 comment karma and/or < 2 months account age. 
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14A-2 - Submission has 5+ Reports and below thresholds.   
+    reports: 5
+    type: submission
+    title+body (regex): ["a(ss|rse|es)([ -]?holes?)?","b(i|\\*)o?(tch|\\*{3})(y|es)?","cocks?([ -]?suck(ers?|ing)?)?","cum(ming|[ -]shots?)?","cunts?","((mother|motha|mutha)[ -]?)?f(u?c?k?k|\\*ck|\\*{0,2}k|\\*{3})(er|ed|ing|s)?", "s(h(i|ar?|\\*)t|\\*{3}|h\\*{2})(s|ter|e|ting)?", "\\(?(\\d{3})\\)?([ .-])(\\d{3})([ .-])(\\d{4})","(\\d{5})([ .-])(\\d{6})","\\(?(\\d{4})\\)?([ .-])(\\d{3})([ .-])(\\d{3})","\\(?(\\d{2})\\)?([ .-])(\\d{4})([ .-])(\\d{4})","\\(?(\\d{2})\\)?([ .-])(\\d{3})([ .-])(\\d{4})","\\+([\\d ]{10,15})", "[!#$%&'*+./0-9=?_`a-z{|}~^-]+@[.a-z-]+\\.(?:com|org|net)", "\\W[A-Za-z]?\\d{1,6}[A-Za-z]? (E(\\.|ast)?|W(\\.|est)?|N(\\.|orth)?|S(\\.|outh)? )?[\\p{Pi}\\p{Pf}]?\\w+( \\w+)?[\\p{Pi}\\p{Pf}]? (st(reet)?|ave(enue)?|r(oa)?d|dr(ive)?|c(our)?t|blvd|boulevard|lane|ln|highway|hwy|route|rt)"] # Street addresses
+    ~body+title+url#whitelist (regex): ["(\\[[^\\]]+?\\]\\()?(https?://|www\\.)\\S+\\)?", "(800|855|866|877|888|007|911)\\W*\\d{3}\\W*\\d{4}", "\\d{3}\\W*555\\W*\\d{4}", "999-999-9999", "000-000-0000", "123-456-7890", "111-111-1111", "012-345-6789", "888-888-8888", "281\\W*330\\W*8004", "777-777-7777", "678-999-8212", "999([ .-])119([ .-])7253","0118 999 811","0118 999 881", "867( -)?5309", "505\\W*503\\W*4455", "1024 2048", "OKemail1@domain.com", "OKemail2@domain.com", "second drive", "minute drive", "hour drive", "day drive", "week drive", "gb drive", "tb drive", "123 Main St", "123 Main Street", "221b baker st", "221b baker street"]
+    ~title+body#whitelist: [second drive, minute drive, hour drive, day drive, week drive, gb drive, tb drive, 123 Main St, 123 Main Street, 221b baker st, 221b baker street]
+    action: remove
+    author:       
+        comment_karma: '< 500'
+        account_age: '< 4 months'
+        satisfy_any_threshold: true
+        is_contributor: false
+        is_gold: false
+    action: filter
+    action_reason: 'Section 14A-2 - Auto filter submissions reported 5 times with < 500 comment karma and/or 4 months account age.'
+    modmail_subject: '5+ reports - Submission filtered. '
+    modmail: |
+        **AutoMod Rule:** [Section 14A-2](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 5+ reports. < 500 comment karma and/or < 4 months account age. Profanity and doxxing detected: {{match}}
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14B - Submission has 6+ Reports and over thresholds.   
+    reports: 6
+    type: link submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
+    author:       
+        comment_karma: '< 1000'
+        account_age: '< 6 months'
+        satisfy_any_threshold: true  
+#        is_contributor: false
+#        is_gold: false
+    overwrite_flair: true
+    set_flair: ["CONTROVERSIAL POST, COMMENTS SORTED", "WARNING"]
+#    set_locked: true
+    set_suggested_sort: new
+    action_reason: 'Section 14B - Auto flair and sort link-posts reported 6 times. OP has < 1000 comment karma and/or 6 months account age.'
+    modmail_subject: '6+ reports - Link submission flaired and sorted by new.'
+    modmail: |
+        **AutoMod Rule:** [Section 14B](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 6+ reports. 500 - 1000 comment karma and/or 4 - 6 months account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14C - Submission has 8+ Reports and over thresholds.   
+    reports: 9
+    type: link submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
+    author:       
+        comment_karma: '< 1500'
+        account_age: '< 8 months'
+        satisfy_any_threshold: true
+        is_contributor: false
+        is_gold: false
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST COMMENTS LOCKED & SORTED.", "WARNING"]
+    set_locked: true
+    set_suggested_sort: new
+    action_reason: 'Section 14C - Auto flair, lock, and sort link-posts reported 9 times. OP has < 1500 comment karma and/or 9 months account age.'
+    modmail_subject: '9+ reports - Link submission flaired, locked, and sorted by new.'
+    modmail: |
+        **AutoMod Rule:** [Section 14C](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 9+ reports. 1000 - 1500 comment karma and/or 6 - 8 months account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14D - Submission has 7+ Reports and over thresholds. For notification purposes only since certain coins are excluded from this report threshold.  
+    reports: 7
+    type: submission
+    title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.       
+    author:
+        comment_karma: '< 2000'
+        account_age: '< 10 months'
+        satisfy_any_threshold: true  
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST", "WARNING"]
+    action_reason: 'Section 14D - Submission reported 8 times. OP has 1500 - 2000 comment karma and/or 8 - 10 months account age. For notification purposes only since XRB, VEN, and IOTA are excluded from AutoMod action in this report range.'
+    modmail_subject: '7+ reports - Text submission flaired.'
+    modmail: |
+        **AutoMod Rule:** [Section 14D](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 7+ reports. 2000 - 2500 comment karma and/or 8 - 10 months account age. For notification purposes only since certain coins are excluded from this report range.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14E - Submission has 7+ Reports and over thresholds.   
+    reports: 7
+    type: text submission
+    ~title+body: ["Nano", "RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
+    author:       
+        comment_karma: '< 2000'
+        account_age: '< 10 months'
+        satisfy_any_threshold: true  
+#        is_contributor: false
+#        is_gold: false
+    overwrite_flair: true
+    set_flair: ["CONTROVERSIAL POST, COMMENTS SORTED", "WARNING"]
+#    set_locked: true
+    set_suggested_sort: new
+    action_reason: 'Section 14E - Auto flair and sort comments by new on text-posts reported 7 times. OP has 1500 - 2000 comment karma and/or 8 - 10 months account age.'
+    modmail_subject: '7+ reports - Text submission flaired and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 14E](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 7+ reports. < 1500 - 2000 comment karma and/or 8 - 10 months account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14F - Submission has 10+ Reports and over thresholds.   
+    reports: 10
+    type: text submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
+    author:       
+        comment_karma: '< 2500'
+        account_age: '< 12 months'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST COMMENTS LOCKED & SORTED.", "WARNING"]
+    set_locked: true
+    set_suggested_sort: new
+    action_reason: 'Section 14F - Auto flair, lock, and sort comments by new for text-posts reported 10 times. OP has 2000 - 2500 comment karma and/or 10 - 12 months account age.'
+    modmail_subject: '10+ reports - Text submission flaired, locked, and sorted by new.'
+    modmail: |
+        **AutoMod Rule:** [Section 14F](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 10+ reports. < 2000 - 2500 comment karma and/or 10 - 12 months account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+#### Second Tier Submission Report Rules
+---
+###### Section 14G - Submission has 12+ Reports and below thresholds.  
+    reports: 12
+    type: submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.
+    author:         
+        comment_karma: '< 2500'
+        account_age: '< 12 months'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    action: filter
+    action_reason: 'Section 14G - Auto filter submissions reported 12 times. OP has 2000 - 2500 comment karma and/or < 12 months account age.'
+    modmail_subject: '12+ reports - Submission filtered.'
+    modmail: |
+        **AutoMod Rule:** [Section 14G](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 12+ reports. < 2000 - 2500 comment karma and/or 10 - 12 months account age. 
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14F - Submission has 9+ Reports and over thresholds.  
+    reports: 12
+    type: link submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] 
+    author:         
+        comment_karma: '< 4500'
+        account_age: '< 16 months'
+        satisfy_any_threshold: true  
+#        is_contributor: false
+#        is_gold: false
+    overwrite_flair: true
+    set_flair: ["CONTROVERSIAL POST COMMENTS SORTED", "WARNING"]
+#    set_locked: true
+    set_suggested_sort: new
+    action_reason: 'Section 14F - Auto flair and sort link-posts reported 12 times. OP has < 4500 comment karma and/or < 16 months account age.'
+    modmail_subject: '12+ reports - Link submission flaired and sorted.'  
+    modmail: |
+        **AutoMod Rule:** [Section 14F](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 12 reports. < 2500 - 4500 comment karma and/or 12 - 16 months account age.'
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+    
+---
+###### Section 14G-1 - Submission has 9+ Reports and over thresholds.  
+    reports: 15
+    type: link submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:         
+        comment_karma: '< 5500'
+        account_age: '< 20 months'
+        satisfy_any_threshold: true
+        is_contributor: false
+        is_gold: false
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST COMMENTS LOCKED & SORTED", "WARNING"]
+    set_locked: true
+#    set_suggested_sort: new
+    action_reason: 'Section 14G - Auto flair and sort link-posts reported 15 times. OP has < 5500 comment karma and/or < 20 months account age.'
+    modmail_subject: '15+ reports - Link submission flaired, locked, and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 14G](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 15+ reports. < 4500 - 5500 comment karma and/or 16 -  20 months account age.  
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14G-2 - Submission has 14+ Reports and over thresholds. For notification purposes only since certain coins are excluded from this report threshold.  
+    reports: 14
+    type: submission
+    title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.author:       
+    author:
+        comment_karma: '< 5500'
+        account_age: '< 20 months'
+        satisfy_any_threshold: true  
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST", "WARNING"]
+    action_reason: 'Section 14G-2 - Submission reported 14 times. OP has 4500 - 5500 comment karma and/or 16 - 20 months account age. For notification purposes only since XRB, VEN, and IOTA are excluded from AutoMod action in this report range.'
+    modmail_subject: '14+ reports - Text submission flaired.'
+    modmail: |
+        **AutoMod Rule:** [Section 14D](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 14+ reports. < 4500 - 5500 comment karma and/or 16 - 20 months account age. For notification purposes only since certain coins are excluded from this report range.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14H - Submission has 1+ Reports and over thresholds.  
+    reports: 13
+    type: text submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:         
+        comment_karma: '< 6500'
+        account_age: '< 24 months'
+        satisfy_any_threshold: true  
+#        is_contributor: false
+#        is_gold: false
+    overwrite_flair: true
+    set_flair: ["CONTROVERSIAL POST COMMENTS SORTED", "WARNING"]
+#    set_locked: true
+    set_suggested_sort: new
+    action_reason: 'Section 14H - Auto flair and sort comments for text-posts reported 13 times. OP has < 6500 comment karma and/or < 24 months accoung age.'
+    modmail_subject: '13+ reports - Text submission flaired and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 14H](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 5500 - 6500 comment karma and/or 20 - 24 months account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14I - Submission has 1+ Reports and over thresholds.  
+    reports: 16
+    type: text submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:         
+        comment_karma: '< 7500'
+        account_age: '< 28 months'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST COMMENTS LOCKED & SORTED", "WARNING"]
+    set_locked: true
+#    set_suggested_sort: new
+    action_reason: 'Section 14I - Auto flair, sort, and lock comments for text-posts reported 16 times. OP has < 6500 comment karma and/or 28 months account age.'
+    modmail_subject: '16+ reports - Text submission flaired, locked, and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 14I](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). |         **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning: 6500 - 7500 comment karma and/or 24 - 28 months account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+      
+##### Third Tier Submission Report Rules
+---
+###### Section 14J - Submission has 13+ Reports and below thresholds.  
+    reports: 17
+    type: submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:      
+        comment_karma: '< 7500'
+        account_age: '< 28 months'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    action: filter
+    action_reason: 'Section 14J - Auto filter any submissions reported 17 times. OP has < 7500 comment karma and/or 28 months account age.'
+    modmail_subject: '17+ reports - Submission filtered.'
+    modmail: |
+        **AutoMod Rule:** [Section 14J](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 17+ reports. 6500 - 7500 comment karma and/or 24 - 28 months account age. 
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14K - Submission has 13+ Reports and over thresholds.
+    reports: 18
+    type: link submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:      
+        comment_karma: '< 10000'
+        account_age: '< 3 years'
+        satisfy_any_threshold: true  
+#        is_contributor: false
+#        is_gold: false
+    overwrite_flair: true
+    set_flair: ["CONTROVERSIAL POST COMMENTS SORTED", "WARNING"]
+#    set_locked: true
+    set_suggested_sort: new
+    action_reason: 'Section 14K - Auto flair and sort comments for link-posts reported 18 times. OP has < 11500 comment karma and/or 5 years account age.'
+    modmail_subject: '18+ reports - Link submission flaired and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 16B](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 18+ reports. 7500 - 10000 comment karma and/or 2 - 3 years account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14L-1 - Submission has 13+ Reports and over thresholds.
+    reports: 21
+    type: link submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:      
+        comment_karma: '< 13500'
+        account_age: '< 4 years'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST COMMENTS SORTED & LOCKED.", "WARNING"]
+#    set_locked: true
+    set_suggested_sort: new
+    action_reason: 'Section 14L-1 - Auto flair and sort comments for link-posts reported 21 times. OP has 10000 - 13500 comment karma and/or 4 years account age.'
+    modmail_subject: '21+ reports - Link submission flaired, locked, and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 14L-1](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 21+ reports. 10000 - 13500 comment karma and/or < 3 - 4 years account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14L-2 - Submission has 20+ Reports and over thresholds. For notification purposes only since certain coins are excluded from this report threshold.  
+    reports: 20
+    type: submission
+    title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"] # Excluding these coins for abusing the report thresholds.author:       
+    author:
+        comment_karma: '< 13500'
+        account_age: '< 20 months'
+        satisfy_any_threshold: true  
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST", "WARNING"]
+    action_reason: 'Section 14L-2 - Submission reported 20 times. OP has 10500 - 13500 comment karma and/or 16 - 20 months account age. For notification purposes only since XRB, VEN, and IOTA are excluded from AutoMod action in this report range.'
+    modmail_subject: '20+ reports - Text submission flaired.'
+    modmail: |
+        **AutoMod Rule:** [Section 14L-2](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 20+ reports. < 10000 - 13500 comment karma and/or 16 - 20 months account age. For notification purposes only since certain coins are excluded from this report range.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14M - Submission has 14+ Reports and over thresholds.
+    reports: 19
+    type: text submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:      
+        comment_karma: '< 17000'
+        account_age: '< 5 years'
+        satisfy_any_threshold: true  
+#        is_contributor: false
+#        is_gold: false
+    overwrite_flair: true
+    set_flair: ["CONTROVERSIAL POST, COMMENTS SORTED", "WARNING"]
+#    set_locked: true
+#    set_suggested_sort: new
+    action_reason: 'Section 14M - Auto flair and sort comments for text-posts reported 19 times. OP has < 17000 comment karma and/or 5 years account age.'
+    modmail_subject: '19+ reports - Text submission flaired.'
+    modmail: |
+        **AutoMod Rule:** [Section 14M](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 19+ reports. 13500 - 17000 comment karma and/or/ 4 - 5 years account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+---
+###### Section 14N - Submission has 21+ Reports and over thresholds.
+    reports: 23
+    type: text submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:      
+        comment_karma: '< 20500'
+        account_age: '< 6 years'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    overwrite_flair: true
+    set_flair: ["WARNING - CONTROVERSIAL POST COMMENTS LOCKED & SORTED", "WARNING"]
+    set_locked: true
+#    set_suggested_sort: new
+    action_reason: 'Section 14N - Auto flair, sort, and lock comments for text-posts reported 23 times. OP has < 20500 comment karma and/or 6 years account age.'
+    modmail_subject: '23+ reports - Text submission flaired, locked, and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 14N](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 23+ report. 17000 - 20500 comment karma and/or 5 - 6 years account age. 
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+      
+---
+###### Section 14N - Submission has 21+ Reports and over thresholds.
+    reports: 24
+    type: submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:
+        comment_karma: '< 25000'
+        account_age: '< 7 years'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    action: filter
+    set_locked: true
+#    set_suggested_sort: new
+    action_reason: 'Section 14N - Auto flair, sort, and lock comments for text-posts reported 24 times. OP has < 20500 comment karma and/or 6 years account age.'
+    modmail_subject: '24+ reports - Text submission flaired, locked, and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 14N](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 24+ report. 20500 - 25000 comment karma and/or 5 - 6 years account age. 
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14N - Submission has 21+ Reports and over thresholds.
+    reports: 25
+    type: submission
+    ~title+body: ["RaiBlocks", "XRB", "VeChain", "Ven", "IOTA"]
+    author:
+        comment_karma: '> 25000'
+        account_age: '> 7 years'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    action: filter
+    set_locked: true
+#    set_suggested_sort: new
+    action_reason: 'Section 14N - Auto flair, sort, and lock comments for text-posts reported 25 times. OP has < 20500 comment karma and/or 6 years account age.'
+    modmail_subject: '25+ reports - Text submission flaired, locked, and sorted.'
+    modmail: |
+        **AutoMod Rule:** [Section 14N](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). | **Submission Title & Permalink:** [{{title}}]({{permalink}})
+        
+        **Reasoning:** 25+ report. 20500 - 25000 comment karma and/or 5 - 6 years account age.
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+        
+
+#### Comment Reports
+---
+###### Section 14T-1 - Comment has 6+ Reports and below thresholds.   
+    reports: 4
+    type: comment
+    author:       
+        comment_karma: '< 250'
+        account_age: '< 3 months'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    action: filter
+    action_reason: 'Section 14T-1 - Auto filter comments reported 4 times with < 250 comment karma and/or 6 months account age.'
+    modmail_subject: '4+ Reports - {{author}} filtered. Has < 250 comment karma and/or 3 months account age.'
+    modmail: |
+        **AutoMod Rule:** [Section 14T](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). |         **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14T-2 - Comment has 6+ Reports and below thresholds.   
+    reports: 6
+    type: comment
+    author:       
+        comment_karma: '< 500'
+        account_age: '< 6 months'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    action: filter
+    action_reason: 'Section 14T-2 - Auto filter comments reported 6 times with < 500 comment karma and/or 6 months account age.'
+    modmail_subject: '6+ Reports - {{author}} filtered. Has < 500 comment karma and/or 6 months account age.'
+    modmail: |
+        **AutoMod Rule:** [Section 14T](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). |         **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14S - Comment has 6+ Reports and over thresholds.   
+    reports: 6
+    type: comment
+    author:       
+        comment_karma: '< 1000'
+        account_age: '< 1 year'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+        overwrite_flair: true
+        set_flair: ["Potentially a controversial user account.", "Warning-level1"]
+    action_reason: 'Section 14S - Auto flair users reported 6 times with < 1000 comment karma and/or 1 year account age.'
+    modmail_subject: '6+ Reports - {{author}} flaired. Has < 1000 comment karma and/or 1 year account age.'
+    modmail: |
+        **AutoMod Rule:** [Section 14S](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). |         **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14R - Comment has 9+ Reports and below thresholds.  
+    reports: 9
+    type: comment
+    author:         
+        comment_karma: '< 1000'
+        account_age: '< 1 year'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    action: filter
+    action_reason: 'Section 14R - Auto filter comments reported 9 times with < 1000 comment karma and/or 1 year account age.'
+    modmail_subject: '9+ Reports - {{author}} filtered. Has < 1000 comment karma and/or 1 year account age.'
+    modmail: |
+        **AutoMod Rule:** [Section 14R](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). |         **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+ 
+---
+###### Section 14Q - Submission has 9+ Reports and over thresholds.  
+    reports: 9
+    type: comment
+    author:         
+        comment_karma: '< 2000'
+        account_age: '< 2 years'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+        overwrite_flair: true
+        set_flair: ["Potentially a controversial user account.", "Warning-level1"]
+    action_reason: 'Section 14Q - Auto flair users reported 9 times with < 2000 comment karma and/or 2 years account age.'
+    modmail_subject: '9+ Reports - {{author}} flaired. Has < 2000 comment karma and/or 2 years account age.'
+    modmail: |
+        **AutoMod Rule:** [Section 14Q](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). |         **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14P - Users has 12+ Reports and below thresholds.  
+    reports: 12
+    type: comment
+    author:      
+        comment_karma: '< 2000'
+        account_age: '< 2 years'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+    action: filter
+    action_reason: 'Section 14P - Auto filter comments reported 10 times with < 1000 comment karma and/or 2 years account age.'
+    modmail_subject: '12+ Reports - {{author}} comment filtered. Has < 1000 comment karma and/or 2 years account age.'
+    modmail: |
+        **AutoMod Rule:** [Section 14P](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). |         **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+
+---
+###### Section 14O - Comment has 10+ reports and over thresholds.
+    reports: 12
+    type: comment
+    author:      
+        comment_karma: '< 4000'
+        account_age: '< 4 years'
+        satisfy_any_threshold: true  
+        is_contributor: false
+        is_gold: false
+        overwrite_flair: true
+        set_flair: ["Potentially a controversial user account.", "Warning-level1"]
+    action_reason: 'Section 14O - Auto flair users reported 12 times with < 4000 comment karma and/or 4 years account age.'
+    modmail_subject: '12+ Reports - {{author}} flaired. Has < 4000 comment karma and/or 4 years account age.'
+    modmail: |
+        **AutoMod Rule:** [Section 14O](https://www.reddit.com/r/Ethfinance/wiki/edit/config/automoderator). |         **Submission Title & Permalink:** "[{{title}}]({{permalink}})"
+        
+        **Author:** /u/{{author}} | **Flair Text:** {{author_flair_text}}
+        
+        **Domain:** {{domain}} | **URL:** {{url}}
+        
+        **Main Text:**
+        
+        -
+        ---
+
+        -
+        {{body}}
+        
+        -
+        ---
+             
+### LINK-FLAIR      
+---
+###### UTLF - User triggered link-flair.
+    type: comment
+    author:
+        comment_karma: '> 100'
+        account_age: '> 1 months'
+    body(case-sensitive) : ["Adoption", "Comedy", "Discussion", "Fundamentals", "Media", "Meta", "News", "Release", "Security", "Sentiment", "Strategy", "Technicals", "Technology", "Warning", "AMA", "Educational", "Metrics"]
+    body#2 : ["[AutoMod]"]
+    is_top_level: true
+    parent_submission:
+       overwrite_flair: true
+       set_flair: ['{{match-body}}','{{match-body}}']
+    comment: 'You have successfully tagged the parent submission by the title of "*{{title}}*" with *{{match-body}}* flair.'
+    
+---
+###### UTLF - User triggered link-flair error message.
+    type: comment
+    body : ["Adoption", "Comedy", "Discussion", "Fundamentals", "Media", "Meta", "News", "Release", "Security", "Sentiment", "Strategy", "Technicals", "Technology", "Warning", "AMA", "Educational", "Metrics"]
+    body#2 : ["[AutoMod]"]
+    is_top_level: true
+    comment: |
+        Hello. You are receiving this message either because you don't have enough age/karma or because your command is not formatted properly. 
+        
+        * If the former, you need a minimum of 1 month account age and 100 comment karma to flair submissions. 
+        
+        * If the latter, you probably used lower-case letters or a plural flair name instead of a singular flair name. For example, if you want to flair a submission with *News* flair, use *News* instead of *NEWS*. See here: `[AutoMod: News]`. Flair names like *News* and *Discussion* don't require this kind of treatment. **TLDR:** Flair names are case-sensitive.
+        
+        If certain flair commands are formatted correctly but do not work, please [inform the mod team](https://www.reddit.com/message/compose?to=%2Fr%2FEthFinance).
+    
+---
+    priority: 4
+    title : ["AMA", "Apr", "April", "Aug", "August", "CST", "Dec", "December", "EST", "Feb", "February", "Friday", "Jan", "January", "Jul", "July", "Jun", "June", "MST", "Mar", "March", "May", "Monday", "Nov", "November", "Oct", "October", "Saturday", "Sep", "September", "Sunday", "Thursday", "Tueday", "Tuesday", "Wednesday", "announcement", "announces", "announcing", "issues statement"]
+    ~domain: ["i.redd.it"]
+    set_flair: 
+        text: News
+        template_id: 13f5e134-c260-11e9-9237-0e527c5ac6fc
+    #!comment: "[AutoMod Note] - Priority 4. Announcement flair 1. Title keywords detected: '{{match-title}}'."
+
+---    
+    priority: 3
+    title : ["adoption", "accept", "accepts", "uses", "integrated", "integrates", "now", "now trading", "accepting", "add", "adds", "added", "adds support", "acceptance", "payments", "welcome", "migrate", "migration", "paid with", "adopting", "adopters", "adopt", "accepting", "purse", "starts using", "approve", "approves", "approved", "expand", "expands", "grow", "grows", "ATM", "ATMs", "sales", "using Bitcoin", "can now buy", "sell", "accepted", "bill pay service", "merchange", "merchants", "google search", "join", "joined", "early adopter", "early adopters", "just saw", "bringing", "publicity"]
+    set_flair: 
+        text: Adoption
+        template_id: 272e7208-c287-11e9-b1a2-0ee727d9a49e
+    #!comment: "[AutoMod Note] - Priority 3. Adoption flair 1. Title keywords detected: '{{match-title}}'."
+
+--- 
+    priority: 8
+    title : ["how it is", "joke","double unicorn", "party", "time to", "every time I", "yeehaw", "like", "in a nutshell", "my reaction", "after", "insanity", "pay day", "payday", "this sub", "for the past", "from the past", "how i feel", "picture", "right now", "how about", "HODL", "Hodlers", "Hodler", "had to", "the moon", "!", "starter pack", "you guys", "trying to stay above", "how i feel when", "when you're", "when you"]
+    domain: ["youtube.com", "i.redd.it", "imgur.com", "i.reddituploads.com", "media.tenor.co", "s-media-cache-ak0.pinimg.com"]
+#    message: |
+#        Greetings /r/Ethfinance subscriber. You are receiving this automated message because you submitted an image link. Unfortunately, images are often difficult for the AutoModerator to tag accurately. If the AutoModerator inaccurately tagged your submission titled "[{{title}}]({{permalink}})", please manually assign it the correct flair. If you are unsure on how to flair a submission, see below.
+        
+#        * To find the flair button on desktop, [click here](http://i.imgur.com/XgqPSI8.png).  
+        
+#        * To assign flair on mobile, [click here](https://imgur.com/a/Nsvul) to see an RIF app exmaple.
+        
+#        * FYI, common image flairs are *Comedy*, *Media*, Technicals, and *Metrics* but you may use any other flairs if you think it's best.
+        
+#        Thank you in advance for your patience and attention.      
+    set_flair: 
+        text: Comedy
+        template_id: d56e0e1e-c25f-11e9-bc8a-0ea901c2544a
+    #!comment: "[AutoMod Note] - Priority 8. Comedy flair 1. Title and domain keywords detected: '{{match-title}}', '{{match-domain}}'."
+--- 
+    priority: 8
+    title (regex, includes): ["comic"]
+    domain: ["youtube.com", "i.redd.it", "imgur.com", "i.reddituploads.com", "media.tenor.co", "s-media-cache-ak0.pinimg.com"]
+    set_flair: 
+        text: Comedy
+        template_id: d56e0e1e-c25f-11e9-bc8a-0ea901c2544a
+    #!comment: "[AutoMod Note] - Priority 8. Comedy flair 2. Title and domain keywords detected: '{{match-title}}', '{{match-domain}}'."
+---    
+    priority: 5
+    title : ["be like", "just saying", "is all like", "honey badger", "you know you're", "lambo", "lambo-ing", "this picture", "right meow", "South Park", "Dilbert"]
+    set_flair: 
+        text: Comedy
+        template_id: d56e0e1e-c25f-11e9-bc8a-0ea901c2544a
+    #!comment: "[AutoMod Note] - Priority 5. Comedy flair 3. Title keywords detected: '{{match-title}}'."
+---    
+    priority: 3
+    domain: ["mememaker.net", "tinypic.com", "gfycat.com", "giphy.com", "media.makeameme.org", "i.redditmedia.com", "i.reddituploads.com", "i.redd.it", "imgur.com", "media.makeameme.org", "scontent-lga3-1.xx.fbcdn.net"]
+    ~title: ["$", "market cap", "cap"]
+    set_flair: 
+        text: Comedy
+        template_id: d56e0e1e-c25f-11e9-bc8a-0ea901c2544a
+    #!comment: "[AutoMod Note] - Priority 3. Comedy flair 4. Domain keywords detected: '{{match-domain}}'."
+
+#---    
+#    priority: 1
+#    type: text submission
+#    body_longer_than: 65
+#    ~title: ["ETH Daily Discussion"]
+#    ~body: ["?"]
+#    set_flair: ["Discussion", "Discussion"]
+---    
+    priority: 9
+    title : ["Daily General Discussion", "Daily Markets Discussion", "talk", "Daily Non-Eth Discussion", "Daily General", "why do", "Weekly ICO Discussion"]
+    set_flair: 
+        text: Discussion
+        template_id: e6c548b2-c25f-11e9-a822-0ea8a15055d8
+    #!comment: "[AutoMod Note] - Priority 9. Discussion flair. Title keywords detected: '{{match-title}}'."
+--- 
+    priority: 4
+    title#1: ["BFX", "BTC-E", "BTCC", "BitMex", "BitPay", "BitStamp", "Bitfinex", "Bitinex", "Bitsquare", "Bitstamp", "Bittrex", "Bter", "CCEDK", "Coinbase", "Coincheck", "Cryptsy", "ETH/BTC", "ETH/USD", "EtherDelta", "EtherEx", "GDAX", "Gatecoin", "Gemini", "GoCoin", "Gox", "Huobi", "Kraken", "Mt", "OKcoin", "Poloniex", "ShapeShift", "ShapeShift.io", "Yunbi", "account", "accounts", "added", "adds", "block.Auction", "book", "etherex", "exchange", "exchanges", "order", "polo", "shapeshift", "withdraw", "withdrawals", "prism"] # Checked for duplicate words.
+    ~title: ["question", "help", "advice", "help", "where to", "where can", "how do", "how can", "how can", "howto", "how to", "Why?", "assitance", "appreciate it", "donate", "donation", "donating", "problem", ">", "<"]
+    set_flair: 
+        text: Exchange
+        template_id: 27285d0e-c823-11e9-8aab-0e69dacd70b6
+    #!comment: "[AutoMod Note] - Priority 4. Exchange flair 1. Title keywords detected: '{{match-title}}'."
+--- 
+    priority: 7
+    title#1: ["BFX", "BTC-E", "BTCC", "BitMex", "BitPay", "BitStamp", "Bitfinex", "Bitinex", "Bitsquare", "Bitstamp", "Bittrex", "Bter", "CCEDK", "Coinbase", "Coincheck", "Cryptsy", "ETH/BTC", "ETH/USD", "EtherDelta", "EtherEx", "GDAX", "Gatecoin", "Gemini", "GoCoin", "Gox", "Huobi", "Kraken", "Mt", "OKcoin", "Poloniex", "ShapeShift", "ShapeShift.io", "Yunbi", "account", "accounts", "added", "adds", "block.Auction", "book", "etherex", "exchange", "exchanges", "order", "polo", "shapeshift", "withdraw", "withdrawals", "prism"] #Checked for duplicates words.
+    title#2: [ "adds", "add"]
+    ~title: ["question", "help","advice", "help", "where to", "where can", "how do", "how can", "how can", "howto", "how to", "Why?", "assitance", "appreciate it", "donate", "donation", "donating", "problem", ">", "<"]
+    set_flair: 
+        text: Exchange
+        template_id: 27285d0e-c823-11e9-8aab-0e69dacd70b6
+    #!comment: "[AutoMod Note] - Priority 7. Exchange flair 2. Title keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+--- 
+    priority: 4
+    domain: ["etherdelta.github.io"]
+    set_flair: 
+        text: Exchange
+        template_id: 27285d0e-c823-11e9-8aab-0e69dacd70b6
+    #!comment: "[AutoMod Note] - Priority 4. Exchange flair 3. Domain keywords detected: '{{match-domain}}'."
+
+---    
+    priority: 5
+    title: ["on the Ethereum network", "value", "this week"]
+    ~title: ["sentiment", "sentiments"]
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 5. Fundamentals flair 1. Title keywords detected: '{{match-title}}'."
+    
+---    
+    priority: 5
+    title+body: ["Casper", "money supply", "inflation", "dapp development", "underlying value", "metropolis", "raiden", "planning to list", "geopolitics", "geo-politics", "ice age", "iceage", "on the Ethereum network"]
+    ~title: ["sentiment", "sentiments"]
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 5. Fundamentals flair 2. Keywords detected: '{{match}}'."
+
+---
+    priority: 4
+    type: link submission
+    title (includes): [ "lets users", "using", "brings", "that work for", "that works for", "improvement", "world's first"]
+    ~title: ["CFTC", "commissioner", "politics", "regulations", "regulatory", "regulators", "regulation", "bit license", "bitlicense", "judge", "ruling", "law", "laws", "department", "court", "jail", "jailed", "seize", "police", "fine", "government", "legal", "prison", "EU", "European Union", "outlawed", "outlaw", "economic sanctions", "attorney", "attorneys", "tax", "taxation", "taxes", "IRS", "SEC", "CFTC", "Russian", "Russians", "ban", "legislation", "legislate", "House of Representatives", "AML/KYC Compliant", "AMC", "KYC", "compliant", "Russia", "China", "campaign", "Clinton", "ECB", "European Central Bank", "license", "licensing", "federal", "prosecuter", "Govt", "Cease-and-Desist", "cease and desist", "patent", "patents", "national security",]
+    set_flair: 
+        text: Technology
+        template_id: be29f760-c276-11e9-89e8-0e16185feac0
+    #!comment: "[AutoMod Note] - Priority 4. Technology flair 1. Title keywords detected: '{{match-title}}'."
+
+---
+    priority: 7
+    title : ["tutorial", "learn", "how-to", "educational", "learn", "learned", "explanation", "understand", "understanding", "guide", "ELI5", "how to video", "FAQ", "newbie questions", "newbie question", "lesson", "lessons", "what is", "Before Investing", "book", "books", "how to", "reading list", "learn", "explained", "infographic", "explain", "explaining", "some advice for"]
+    ~title: ["buy ETH", "what is going"]
+    set_flair: 
+        text: Discussion
+        template_id: e6c548b2-c25f-11e9-a822-0ea8a15055d8
+    #!comment: "[AutoMod Note] - Priority 7. Educational flair. Title keywords detected: '{{match-title}}', '{{match-domain}}'."
+
+--- 
+    priority: 8
+    domain: ["youtube.com", "youtu.be", "twitter.com", "soundcloud.com", "media.makeameme.org", "i.redditmedia.com", "imgur.com"]
+    ~title : ["metrics", "hashrate", "days destroyed", "subs", "subscriptions", "demographic", "demographics", "calculate", "calculations", "calculating", "traffic", "ticker", "Google Trends", "nodes", ]
+#    message: 'Please assign your submission appropriate flair if the AutoModerator tagged it incorrectly. Thank you.'
+    set_flair: 
+        text: Media
+        template_id: 0f3308ac-c260-11e9-811e-0eb467dc9594
+    #!comment: "[AutoMod Note] - Priority 8. Media flair 1. Domain keywords detected: '{{match-domain}}'."
+
+---
+    priority: 4
+    type: text submission
+    body_shorter_than: 25 
+    domain: ["twitter.com", "youtube.com", "facebook.com", "youtu.be"]
+#    message: 'Please assign your submission(linked above) appropriate flair if the AutoModerator tagged it inaccurately. Thank you.'
+    #satisfy_any_threshold: true
+    set_flair: 
+        text: Media
+        template_id: 0f3308ac-c260-11e9-811e-0eb467dc9594
+    #!comment: "[AutoMod Note] - Priority 4. Media flair 2. Domain keywords detected: '{{match-domain}}'."
+---
+    priority: 3
+    title : ["tweets", "retweets", "video", "videos", "podcast", "podcast", "I built a", "NPR", "Bloomberg", "CNBC", "FOX", "CBS", "ABC", "NYT", "New York Times", "WSJ", "Wall Street Journal", "Forbes"]
+    set_flair: 
+        text: Media
+        template_id: 0f3308ac-c260-11e9-811e-0eb467dc9594
+    #!comment: "[AutoMod Note] - Priority 3. Media flair 3. Title keywords detected: '{{match-title}}'."
+
+---    
+    priority: 2
+    title : ["metrics", "hashrate", "days destroyed", "subs", "subscriptions", "demographic", "demographics", "calculate", "calculations", "calculating", "traffic", "ticker", "Google Trends", "nodes",]
+    set_flair: 
+        text: Metrics
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 2. Metrics flair 1. Title keywords detected: '{{match-title}}'."
+---
+    priority: 5
+    title (includes): ['%', "we hit $"]
+    set_flair: 
+        text: Metrics
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070 
+    #!comment: "[AutoMod Note] - Priority 5. Metrics flair 2. Title keywords detected: '{{match-title}}'."
+---    
+    priority: 3
+    domain: ["etherchain.org", "etherscan.io", "coinmarketcap.com", "worldcoinindex.com"]
+    set_flair: 
+        text: Metrics
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 3. Metrics flair 3. Domain keywords detected: '{{match-domain}}'."
+---    
+    priority: 7
+    title : ["metrics", "hashrate", "Nodes", "nodes", "order book", "Order book", "days destroyed", "subs", "subscriptions", "Demographic", "demographic", "Demographics", "demographics", "Calculate", "calculate", "Calculations", "calculations", "Calculating", "calculating", "traffic", "ticker", "Google Trends", "nodes", "survey", "google"]
+    domain: ["imgur.com", "i.redd.it"]
+    message: 'Please assign appropriate flair to your submission title "{{title}}" if the AutoModerator tagged it inaccurately. Thank you.'
+    set_flair: 
+        text: Metrics
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 7. Metrics flair 4. Title and domain keywords detected: '{{match-title}}', '{{match-domain}}'."
+--- 
+    priority: 5
+    title : ["marketcap", "market cap", "cap"]
+    domain: ["i.redd.it", "imgur.com"]
+    message: 'Please assign appropriate flair to your submission title "{{title}}" if the AutoModerator tagged it inaccurately. Thank you.'
+    set_flair: 
+        text: Metrics
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 5. Metrics flair 5. Title and domain keywords detected: '{{match-title}}', '{{match-domain}}'."
+---      
+    priority: 2
+    title : [ "Ethfinance", "/r/Ethfinance", "r/ethfinance", "this sub", "subscribers!", "subs!", "meta", "this place"]
+    set_flair: 
+        text: Meta
+        template_id: a1db8b08-c296-11e9-a9b5-0ea8a15055d8
+    #!comment: "[AutoMod Note] - Priority 2. Meta flair 1. Title keywords detected: '{{match-title}}'."
+
+---    
+    priority: 2
+    title : ["mine", "mining difficulty", "miner", "miners", "mining", "Pools", "pool", "staking", "stake", "Ethermine", "Ethpool", "unconfirmed transactions", "onboard"]
+    ~title : ["sentiment", "sentiments", "releases", "release", "released", "ETC", "Ethereum Classic", "EthereumClassic", "hashrate", "difficulty"]
+    set_flair: 
+        text: Technology
+        template_id: be29f760-c276-11e9-89e8-0e16185feac0
+    #!comment: "[AutoMod Note] - Priority 2. Mining-minint flair 1. Title keywords detected: '{{match-title}}'."
+---
+    priority: 5 
+    title : ["maker", "mkr", "makerdao"]
+    set_flair: 
+        text: Technology
+        template_id: be29f760-c276-11e9-89e8-0e16185feac0
+    #!comment: "[AutoMod Note] - Priority 5. Maker flair 1. Title keywords detected: '{{match-title}}'."
+---
+    priority: 6 
+    domain: ["mkr.market"]
+    set_flair: 
+        text: Technology
+        template_id: be29f760-c276-11e9-89e8-0e16185feac0
+    #!comment: "[AutoMod Note] - Priority 5. Maker flair 2. Domain keywords detected: '{{match-domain}}'."
+---
+    priority: 1
+    type: link submission
+    ~url: ["i.imgur.com", "mememaker.net", "tinypic.com", "gfycat.com","i.redd.it", "i.reddituploads.com"]
+    set_flair: 
+        text: News
+        template_id: 13f5e134-c260-11e9-9237-0e527c5ac6fc
+    #!comment: "[AutoMod Note] - Priority 1. News flair 1. URL keywords detected: '{{match-URL}}'."
+---
+    priority: 2
+    title : ["NEWS", "News", "news", "front page", "page"]
+    set_flair: 
+        text: News
+        template_id: 13f5e134-c260-11e9-9237-0e527c5ac6fc
+    #!comment: "[AutoMod Note] - Priority 2. News flair 2. Title keywords detected: '{{match-title}}'."
+#---
+#    priority: 1
+#    domain: ["medium.com", "cointelegraph.com", "nytimes.com", "forbes.com", "venturebeat.com", "coindesk.com", "bitcoin.com", "newsbtc.com", "cryptocoinsnews.com", "coinfox.info", "bitcoinmagazine.com", "wsj.com", "huffingtonpost.com", "foxbusiness.com", "marketwatch.com", "ibtimes.co.uk"]
+#    set_flair: ["NEWS", "NEWS"]
+---
+    priority: 2
+    title : ["Release", "release", "Released", "released", "Launch", "launch", "launched"]
+    set_flair: 
+        text: Release
+        template_id: 1ba90898-c260-11e9-9597-0ebdc14d75e6
+    #!comment: "[AutoMod Note] - Priority 2. Release flair 1. Title keywords detected: '{{match-title}}'."
+---
+    priority: 2
+    type: text submission
+    title : ["question", "help", "how much", "advice", "help", "where to", "where can", "how do", "how can", "how can", "howto", "how to", "Why?", "assitance", "appreciate it", "donate", "donation", "donating", "problem", "How is this possible", "i don't know why", "I don't know what happened", "I don't know what to do", "still waiting", "withdraw issue", "deposit issue", "delayed"]
+    set_flair:
+        text: Discussion
+        template_id: 1ba90898-c260-11e9-9597-0ebdc14d75e6
+    #!comment: "[AutoMod Note] - Priority 2. Support flair 1. Title keywords detected: '{{match-title}}'."
+
+---
+    priority: 8
+    type: text submission
+    title: ["where to", "where can", "how do", "how can", "how to", "need some help", "need help", "why is it", "assistance needed", "appreciated it",  "How is this possible", "i don't know why", "I don't know what happened", "I don't know what to do"]
+    ~title: ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "token", "ERC20"]
+    set_flair:
+        text: Discussion
+        template_id: 1ba90898-c260-11e9-9597-0ebdc14d75e6
+    #!comment: "[AutoMod Note] - Priority 8. Support flair 2. Title keywords detected: '{{match-title}}'."
+
+---
+    priority: 5
+    title : ["DoS", "hack", "hacked", "hacker", "hackers", "encryption", "security", "secure", "cyber security", "cybersecurity", "attacker", "attackers", "attack", "attacked", "vulnerability", "exploit", "ransomware", "hf", "hard fork", "fork", "hardfork","protect", "protection", "protecting", "avoid", "spam", "spamming", "bug", "bugs", "virus", "viruses", "exploit", "exploits", "NSA", "DDOS", "bounty", "Authy", "security", "2FA", "threat", "threatening", "quantom"]
+    set_flair: 
+        text: Security
+        template_id: 21206e88-c260-11e9-b1a6-0e4b8e71c26c
+    #!comment: "[AutoMod Note] - Priority 5. Security flair 1. Title keywords detected: '{{match-title}}'."
+---
+    priority: 6
+    title+body#1: ["do not keep"]
+    title+body#2: ["on exchanges"]
+    set_flair: 
+        text: Security
+        template_id: 21206e88-c260-11e9-b1a6-0e4b8e71c26c
+    #!comment: "[AutoMod Note] - Priority 6. Security flair 2. Both title+body search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---
+    priority: 9
+    title : ["bullish", "bearish", "Buy Ethereum", "sell Ethereum"]
+    set_flair: 
+        text: Sentiment
+        template_id: 26e96004-c260-11e9-bb65-0ebdae939b9c
+    #!comment: "[AutoMod Note] - Priority 2. Sentiment flair 1. Title keywords detected: '{{match-title}}'."
+---
+    priority: 4
+    title+body : ["opinion", "pessimism", "bought", "all in",  "prediction", "predictions", "accumulator", "bull whale",  "bear whale", "Whale", "whale", "google trends", "sentiment", "sentiments", "do you think", "fever", "poll", "polls", "survey", "surveys", "we will never", "we will always", "emotions", "emotion", "feeling", "feelings", "sense", "sensing", "to the top", "hype", "hyped"]
+    set_flair: 
+        text: Sentiment
+        template_id: 26e96004-c260-11e9-bb65-0ebdae939b9c
+    #!comment: "[AutoMod Note] - Priority 4. Sentiment flair 1. Title: '{{match-title}}'."
+---
+    priority: 3
+    title : ["we will never", "we will always", "sentiment", "sentiments", "mood", "confident", "confidence", "likelyhood", "likely", "prediction", "predictions", "to the top"]
+    ~title : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    ~domain: ["i.redd.it", "imgur.com"]
+    set_flair: 
+        text: Sentiment
+        template_id: 26e96004-c260-11e9-bb65-0ebdae939b9c
+    #!comment: "[AutoMod Note] - Priority 3. Comedy flair 2. Title keywords detected: '{{match-title}}'."
+---
+    priority: 5
+    title+body : ["strategy", "strategies", "assess", "manipulate", "goal", "good time to buy", "good time", "range trading", "swing trading", "day trading", "short-term trading", "calculate", "calculations", "calculating", "opportunity", "opportunities", "where to trade", "don't invent more than", "should I", "thesis", "stop losses", "stop loss", "option", "options", "50/50", "if you have ideas", "have you got invested", "have you invested", "tips", "worst case", "best case", "tax implications", "tax", "taxes", "prepared to lose", "time", "take a break", "limit-order", "stop order", "trailing stop order", "portfolio", "take on credit", "this is how"]
+    ~title+body : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    set_flair: 
+        text: Strategy
+        template_id: 2e33cd22-c260-11e9-bbae-0e6b404c5cee
+    #!comment: "[AutoMod Note] - Priority 5. Strategy flair 1. Title+body keywords detected: '{{match}}'."
+---
+    priority: 7
+    title#1: ["after"]
+    title#2: ["invest"]
+    ~title: ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    set_flair: 
+        text: Strategy
+        template_id: 2e33cd22-c260-11e9-bbae-0e6b404c5cee
+    #!comment: "[AutoMod Note] - Priority 7. Strategy flair 2. Both title keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---
+    priority: 7
+    body: ["don't invest more than", "sold", "bought"]
+    set_flair: 
+        text: Strategy
+        template_id: 2e33cd22-c260-11e9-bbae-0e6b404c5cee
+    #!comment: "[AutoMod Note] - Priority 7. Strategy flair 3. Body keyword detected: '{{match}}'."
+---
+    priority: 2
+    title+body : [ "How much", "if the"]
+    set_flair: 
+        text: Strategy
+        template_id: 2e33cd22-c260-11e9-bbae-0e6b404c5cee
+    #!comment: "[AutoMod Note] - Priority 2. Strategy flair 4. Title+body keyword detected: '{{match}}'."
+---
+    priority: 2
+    title : ["tool", "tools", "plugins", "wallet", "wallets", "tracker", "app", "bot", "bots", "tip bot" ]
+    set_flair: 
+        text: Technology
+        template_id: be29f760-c276-11e9-89e8-0e16185feac0
+    #!comment: "[AutoMod Note] - Priority 2. Tool flair 1. Title keyword detected: '{{match}}'."
+
+---
+    priority: 8
+    title : ["tip bot" ]
+    set_flair: 
+        text: Technology
+        template_id: be29f760-c276-11e9-89e8-0e16185feac0
+    #!comment: "[AutoMod Note] - Priority 8. Tool flair 2. Title keyword detected: '{{match}}'."
+---    
+    priority: 5
+    title : ["$", "<", ">", "ATH", "Bullish", "Buy", "Consolidating", "Double", "ETH/BTC", "ETH/USD", "ETHBTC", "ETHUSD", "EthereumWisdom", "Head", "Ichimoku", "Pattern", "RSI", "TA", "TRADINGVIEW", "TradingView", "[0-9][0-9]%", "all", "arbitrage", "bearwhale", "bounce", "breaking", "bubble", "bubbles", "bullish", "bullwhale", "buy", "chart", "charts", "consolidating", "consolidation", "correction", "corrections", "correlate", "correlation", "days", "double", "downtrend", "dump", "ethereumwisdom", "forecast", "forex", "google", "handle", "head", "highs", "indicator", "inverse", "inverse", "inversely", "jumped", "jumps", "key", "launch", "long", "margin", "market", "market", "marketcap", "markets", "metrics", "order", "oscillator", "oscillators", "RSI", "pattern", "patterns", "pivot", "price", "price", "pump", "pumping", "pumps", "rallies", "rally", "regain", "regains", "relaunch", "resistance", "reversal", "short", "short", "spike", "stochastic", "support", "technical", "trade", "tradeable", "traded", "traders", "trades", "trading", "trading", "tradingview", "uptrend", "volatility", "volume", "weekly chart", "who Cloud", "Triangle", "Zone", "release", "analysis", "and at", "book", "bottom", "buying", "cap", "correlation", "decline", "destroyed", "dip", "high", "is level", "levels", "low", "out", "selling", "shoulders", "squeeze", "streak", "the time trends", "technical analysis", "sell wall", "buy wall", "forecast", "forecasted", "forecasting"]
+    ~title : ["inflation", "legal","money supply", "fundamental", "halving", "impact on Ethereum price", "impact on price", "hard fork", "hf", "event", "events", "capital flow", "capital flows", "capital flight", "capital flights", "dividend", "dividends", "events", "event", "anchoring", "anchor", "anchors", "fees", "TX backlog", "TX", "monetary policy", "Casper", "ETF", "interest rates", "block reward", "block rewards"]
+    ~domain: ["twitter.com"]
+    set_flair: 
+        text: Technicals
+        template_id: 3d02e784-c260-11e9-ac9b-0e5c330dd3d0
+    #!comment: "[AutoMod Note] - Priority 5. Technicals flair 1. Title keywords detected: '{{match}}'."
+---
+    priority: 6
+    title : ["$", "<", ">", "ATH", "Bullish", "Buy", "Consolidating", "Double", "ETH/BTC", "ETH/USD", "ETHBTC", "ETHUSD", "EthereumWisdom", "Head", "Ichimoku", "Pattern", "RSI", "TA", "TRADINGVIEW", "TradingView", "[0-9][0-9]%", "all", "arbitrage", "bearwhale", "bounce", "breaking", "bubble", "bubbles", "bullish", "bullwhale", "buy", "chart", "charts", "consolidating", "consolidation", "correction", "corrections", "correlate", "correlation", "days", "double", "downtrend", "dump", "ethereumwisdom", "forecast", "forex", "google", "handle", "head", "highs", "indicator", "inverse", "inverse", "inversely", "jumped", "jumps", "key", "launch", "long", "margin", "market", "market", "marketcap", "markets", "metrics", "order", "oscillator", "oscillators", "RSI", "pattern", "patterns", "pivot", "price", "price", "pump", "pumping", "pumps", "rallies", "rally", "regain", "regains", "relaunch", "resistance", "reversal", "short", "short", "spike", "stochastic", "support", "technical", "trade", "tradeable", "traded", "traders", "trades", "trading", "trading", "tradingview", "undervalued", "uptrend", "volatility", "volume", "week chart", "who Cloud", "Triangle", "Zone", "release", "analysis", "and at", "book", "bottom", "buying", "cap", "correlation", "decline", "destroyed", "dip", "high", "is level", "levels", "low", "out", "selling", "shoulders", "squeeze", "streak", "the time trends", "technical analysis", "sell wall", "buy wall"]
+    domain: ["imgur.com", "i.redd.it"]
+    ~title : ["inflation", "legal","money supply", "fundamental", "halving", "impact on Ethereum price", "hard fork", "hf", "event", "events", "capital flow", "capital flows", "capital flight", "capital flights", "dividend", "dividends", "events", "event", "anchoring", "anchor", "anchors", "fees", "TX backlog", "TX", "monetary policy", "Casper", "ETF", "interest rates", "block reward", "block rewards"]
+    ~domain: ["twitter.com"]
+    set_flair: 
+        text: Technicals
+        template_id: 3d02e784-c260-11e9-ac9b-0e5c330dd3d0
+    #!comment: "[AutoMod Note] - Priority 6. Technicals flair 2. Title keywords detected: '{{match}}'."
+--- 
+    priority: 6
+    domain: ["tradingview.com", "ethereumwisdom.com", "bitcoinwisdom.com", "charts.stocktwits.com"]
+    set_flair: 
+        text: Technicals
+        template_id: 3d02e784-c260-11e9-ac9b-0e5c330dd3d0
+    #!comment: "[AutoMod Note] - Priority 6. Technicals flair 2. Domain keywords detected: '{{match-domain}}'."
+---
+    priority: 8
+    title+body : ["warning", "warned", "caution", "exercise caution", "scam", "fraudulent", "caution", "beware","scam", "scamming", "scamers", "warning", "warn", "warned", "ponzi", "scam", "scamming", "scamers", "IMMEDIATELY", "ponzi", "premined", "Phishing", "beware", "fake", "red flag", "red flags"]
+    ~title: ["?"]
+    message: 'Please assign appropriate flair to your submission titled "{{title}}" if the AutoModerator tagged it inaccurately. Thank you.'
+    set_flair: 
+        text: Warning
+        template_id: 2436a134-c272-11e9-a853-0eb5e5decbea
+    #!comment: "[AutoMod Note] - Priority 8. Warning flair 1. Title+body keyword detected: '{{match}}'."
+#    modmail_subject: "Potential Inflammatory Title"
+#    modmail: 'The above submission by /u/{{author}}, with title "{{title}}" has just posted. Make sure the title and flair is appropriate and not inflammatory.'
+---
+    priority: 9
+    title+body#1 : ["warning", "warned", "caution", "exercise caution", "scam", "fraudulent", "caution", "beware","scam", "scamming", "scamers", "warning", "warn", "warned", "ponzi", "scam", "scamming", "scamers", "IMMEDIATELY", "ponzi", "premined", "Phishing", "beware", "fake"]
+    title+body#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "ERC20", "token", "tokens"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    message: 'Please assign appropriate flair to your submission titled "{{title}}" if the AutoModerator tagged it inaccurately. Thank you.'
+    set_flair: 
+        text: Warning
+        template_id: 2436a134-c272-11e9-a853-0eb5e5decbea
+    #!comment: "[AutoMod Note] - Priority 9. Token Warning flair. Both title+body search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+#    modmail_subject: "Potential Inflammatory Title"
+#    modmail: 'The above submission by /u/{{author}}, with title "{{title}}" has just posted. Make sure the title and flair is appropriate and not inflammatory.'
+--- 
+    priority: 5
+    title#1 : ["AMA", "Apr", "April", "Aug", "August", "CST", "Dec", "December", "EST", "Feb", "February", "Friday", "Jan", "January", "Jul", "July", "Jun", "June", "MST", "Mar", "March", "May", "Monday", "Nov", "November", "Oct", "October", "Saturday", "Sep", "September", "Sunday", "Thursday", "Tueday", "Tuesday", "Wednesday", "announcement", "announces", "announcing", "issues statement"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "token", "tokens", "ERC20"]
+    ~title: ["release", "launch", "relaunch","launch", "meet", "meetup", "next", "relaunch", "this", "to", "release", "launch", "month", "release", "up", "Daily Discussion", "where's the guy", "where is the guy", "Daily General Discussion", "Daily Markets Discussion", "ETH", "ether", "ethereum"]
+    ~domain: ["i.redd.it"]
+    set_flair: 
+        text: News
+        template_id: 13f5e134-c260-11e9-9237-0e527c5ac6fc
+    #!comment: "[AutoMod Note] - Priority 5. DApp Announcement flair 1. Both title seach check keywords detected:  '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+--- 
+    priority: 5
+    title : ["AMA", "Apr", "April", "Aug", "August", "CST", "Dec", "December", "EST", "Feb", "February", "Friday", "Jan", "January", "Jul", "July", "Jun", "June", "MST", "Mar", "March", "May", "Monday", "Nov", "November", "Oct", "October", "Saturday", "Sep", "September", "Sunday", "Thursday", "Tueday", "Tuesday", "Wednesday", "announcement", "announces", "announcing", "issues statement"]
+    url+domain (includes): ["upfiring.com", "medium.com/@metaxchain", "sweetbridge.com", "medium.com/blackmoon-crypto", "medium.com/@flixxo", "medium.com/fansunite", "ins.world", "blog.genesis.vision", "blog.omisego.network", "blog.lendroid.com", "blog.hellobloom.io", "blog.status.im", "medium.com/devery-io"]
+    ~title: ["release", "launch", "relaunch","launch", "meet", "meetup", "next", "relaunch", "this", "to", "release", "launch", "month", "release", "up", "Daily Discussion", "where's the guy", "where is the guy", "Daily General Discussion", "Daily Markets Discussion", "ETH", "ether", "ethereum"]
+    ~domain: ["i.redd.it"]
+    set_flair: 
+        text: News
+        template_id: 13f5e134-c260-11e9-9237-0e527c5ac6fc
+    #!comment: "[AutoMod Note] - Priority 5. DApp Announcement flair 2. Title and url+domain keywords detected: '{{match-title}}', '{{match-url+domain}}'."
+---    
+    priority: 4
+    title#1 : ["adoption", "accept", "accepts", "uses", "integrated", "integrates", "now", "now trading", "accepting", "add", "adds", "added", "adds support", "acceptance", "payments", "welcome", "migrate", "migration", "paid with", "adopting", "adopters", "adopt", "accepting", "purse", "starts using", "approve", "approves", "approved", "expand", "expands", "grow", "grows", "ATM", "ATMs", "sales", "using Bitcoin", "can now buy", "sell", "accepted", "bill pay service", "merchange", "merchants", "google search", "join", "joined", "early adopter", "early adopters", "just saw", "bringing"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "ERC20", "token", "tokens"]
+    ~title: ["tool", "ether", "ethereum", "ETH"]
+    set_flair: 
+        text: Adoption
+        template_id: 272e7208-c287-11e9-b1a2-0ee727d9a49e
+    #!comment: "[AutoMod Note] - Priority 4. DApp Adoption flair 1. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---    
+    priority: 4
+    title : ["adoption", "accept", "accepts", "uses", "integrated", "integrates", "now", "now trading", "accepting", "add", "adds", "added", "adds support", "acceptance", "payments", "welcome", "migrate", "migration", "paid with", "adopting", "adopters", "adopt", "accepting", "purse", "starts using", "approve", "approves", "approved", "expand", "expands", "grow", "grows", "ATM", "ATMs", "sales", "using Bitcoin", "can now buy", "sell", "accepted", "bill pay service", "merchange", "merchants", "google search", "join", "joined", "early adopter", "early adopters", "just saw", "bringing"]
+    url+domain (includes): ["upfiring.com", "medium.com/@metaxchain", "sweetbridge.com", "medium.com/blackmoon-crypto", "medium.com/@flixxo", "medium.com/fansunite", "ins.world", "blog.genesis.vision", "blog.omisego.network", "blog.lendroid.com", "blog.hellobloom.io", "blog.status.im", "medium.com/devery-io"]
+    ~title: ["tool", "ether", "ethereum", "ETH"]
+    set_flair: 
+        text: Adoption
+        template_id: 272e7208-c287-11e9-b1a2-0ee727d9a49e
+    #!comment: "[AutoMod Note] - Priority 5. DApp Adoption flair. Title and url+domain keywords detected: '{{match-title}}', '{{match-url+domain}}'."
+--- 
+    priority: 8
+    title#1 : ["tutorial", "learn", "how-to", "educational", "learn", "learned", "explanation", "understand", "understanding", "guide", "ELI5", "how to video", "FAQ", "newbie questions", "newbie question", "lesson", "lessons", "what is", "Before Investing", "book", "books", "how to", "reading list", "learn", "explained", "infographic", "explain", "explaining", "some advice for"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden", "token", "tokens", "ERC20"]
+    ~title: ["what is going", "ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Adoption
+        template_id: 272e7208-c287-11e9-b1a2-0ee727d9a49e
+    #!comment: "[AutoMod Note] - Priority 8. DApp Educational flair. Both title seach check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+--- 
+    priority: 8
+    title : ["tutorial", "learn", "how-to", "educational", "learn", "learned", "explanation", "understand", "understanding", "guide", "ELI5", "how to video", "FAQ", "newbie questions", "newbie question", "lesson", "lessons", "what is", "Before Investing", "book", "books", "how to", "reading list", "learn", "explained", "infographic", "explain", "explaining", "some advice for"]
+    url+domain (includes): ["upfiring.com", "medium.com/@metaxchain", "sweetbridge.com", "medium.com/blackmoon-crypto", "medium.com/@flixxo", "medium.com/fansunite", "ins.world", "blog.genesis.vision", "blog.omisego.network", "blog.lendroid.com", "blog.hellobloom.io", "blog.status.im", "medium.com/devery-io"]
+    ~title: ["what is going", "ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Technology
+        template_id: be29f760-c276-11e9-89e8-0e16185feac0
+    #!comment: "[AutoMod Note] - Priority 8. DApp Educational flair. Title and url+domain keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---
+    priority: 9
+    domain: ["youtube.com", "youtu.be", "twitter.com", "soundcloud.com", "media.makeameme.org", "i.redditmedia.com", "imgur.com"]
+    title: ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden"]
+    ~title : ["metrics", "hashrate", "days destroyed", "subs", "subscriptions", "demographic", "demographics", "calculate", "calculations", "calculating", "traffic", "ticker", "Google Trends", "nodes", "ETH", "ether", "Ethereum"]
+#    message: 'Please assign your submission appropriate flair if the AutoModerator tagged it incorrectly. Thank you.'
+    set_flair: 
+        text: Media
+        template_id: 0f3308ac-c260-11e9-811e-0eb467dc9594
+    #!comment: "[AutoMod Note] - Priority 9. DApp Media flair 1. Title and domain keywords detected: '{{match-title}}', '{{match-domain}}'."
+
+---
+    priority: 5
+    type: text submission
+    body_shorter_than: 25 
+    title: ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    domain: ["twitter.com", "youtube.com", "facebook.com", "youtu.be"]
+#    message: 'Please assign your submission(linked above) appropriate flair if the AutoModerator tagged it inaccurately. Thank you.'
+    #satisfy_any_threshold: true
+    set_flair: 
+        text: Media
+        template_id: 0f3308ac-c260-11e9-811e-0eb467dc9594
+    #!comment: "[AutoMod Note] - Priority 5. DApp Media flair 2. Body shorter than 25 characters. Title and domain keyword detected: '{{match-title}}', '{{match-domain}}'."
+---    
+    priority: 4
+    title#1 : ["tweets", "retweets", "video", "videos", "podcast", "podcast", "I built a", "NPR", "Bloomberg", "CNBC", "FOX", "CBS", "ABC", "NYT", "New York Times", "WSJ", "Wall Street Journal", "Forbes"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Media
+        template_id: 0f3308ac-c260-11e9-811e-0eb467dc9594
+    #!comment: "[AutoMod Note] - Priority 4. DApp Media flair 3. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---    
+    priority: 4
+    title : ["tweets", "retweets", "video", "videos", "podcast", "podcast", "I built a", "NPR", "Bloomberg", "CNBC", "FOX", "CBS", "ABC", "NYT", "New York Times", "WSJ", "Wall Street Journal", "Forbes"]
+    url+domain (includes): ["upfiring.com", "medium.com/@metaxchain", "sweetbridge.com", "medium.com/blackmoon-crypto", "medium.com/@flixxo", "medium.com/fansunite", "ins.world", "blog.genesis.vision", "blog.omisego.network", "blog.lendroid.com", "blog.hellobloom.io", "blog.status.im", "medium.com/devery-io"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Media
+        template_id: 0f3308ac-c260-11e9-811e-0eb467dc9594
+    #!comment: "[AutoMod Note] - Priority 5. DApp Media flair 4. Title and url+domain keywords detected: '{{match-title}}', '{{match-url+domain}}'."
+---    
+    priority: 3
+    title#1 : ["metrics", "hashrate", "days destroyed", "subs", "subscriptions", "demographic", "demographics", "calculate", "calculations", "calculating", "traffic", "ticker", "Google Trends", "nodes",]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 3. DApp Metrics flair 1. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---    
+    priority: 3
+    title : ["metrics", "hashrate", "days destroyed", "subs", "subscriptions", "demographic", "demographics", "calculate", "calculations", "calculating", "traffic", "ticker", "Google Trends", "nodes",]
+    url+domain (includes): ["upfiring.com", "medium.com/@metaxchain", "sweetbridge.com", "medium.com/blackmoon-crypto", "medium.com/@flixxo", "medium.com/fansunite", "ins.world", "blog.genesis.vision", "blog.omisego.network", "blog.lendroid.com", "blog.hellobloom.io", "blog.status.im", "medium.com/devery-io"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 3. DApp Metrics flair 2. Title and url+domain keywords detected: '{{match-title}}', '{{match-url+domain}}'."
+--- 
+    priority: 8
+    title#1 : ["metrics", "hashrate", "Nodes", "nodes", "order book", "Order book", "days destroyed", "subs", "subscriptions", "Demographic", "demographic", "Demographics", "demographics", "Calculate", "calculate", "Calculations", "calculations", "Calculating", "calculating", "traffic", "ticker", "Google Trends", "nodes", "survey"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    domain: ["imgur.com", "i.redd.it"]
+    message: 'Please assign appropriate flair to your submission title "{{title}}" if the AutoModerator tagged it inaccurately. Thank you.'
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 8. DApp Metrics flair 3. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---    
+    priority: 6
+    title#1 : ["marketcap", "market cap", "cap"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    domain: ["i.redd.it", "imgur.com"]
+    message: 'Please assign appropriate flair to your submission title "{{title}}" if the AutoModerator tagged it inaccurately. Thank you.' 
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 6. DApp Metrics flair 4. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---    
+    priority: 4
+    domain: ["etherchain.org", "etherscan.io", "coinmarketcap.com", "worldcoinindex.com"]
+    title : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 4. DApp Metrics flair 5. Title and domain keywords detected: '{{match-title}}', '{{match-domain}}'."
+---    
+    priority: 3
+    title#1 : ["metrics", "hashrate", "days destroyed", "subs", "subscriptions", "demographic", "demographics", "calculate", "calculations", "calculating", "traffic", "ticker", "Google Trends", "nodes",]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "Raiden"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 3. DApp Metrics flair 6. Both title search check keywords detected: '{{match-title}}', '{{match-domain}}'."
+
+---    
+    priority: 3
+    title : ["metrics", "hashrate", "days destroyed", "subs", "subscriptions", "demographic", "demographics", "calculate", "calculations", "calculating", "traffic", "ticker", "Google Trends", "nodes",]
+    url+domain (includes): ["upfiring.com", "medium.com/@metaxchain", "sweetbridge.com", "medium.com/blackmoon-crypto", "medium.com/@flixxo", "medium.com/fansunite", "ins.world", "blog.genesis.vision", "blog.omisego.network", "blog.lendroid.com", "blog.hellobloom.io", "blog.status.im", "medium.com/devery-io"]
+    ~title: ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Fundamentals
+        template_id: f8c441a8-c25f-11e9-a1c6-0e49194e2070
+    #!comment: "[AutoMod Note] - Priority 3. DApp Metrics flair 7. Title and url+domain keywords detected: '{{match-title}}', '{{match-url+domain}}'."
+---
+    priority: 3
+    title#1 : ["NEWS", "News", "news", "front page", "page"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "token", "tokens"]
+    ~title : ["Ethereum", "ETH", "ether"]
+    set_flair: 
+        text: News
+        template_id: 13f5e134-c260-11e9-9237-0e527c5ac6fc
+    #!comment: "[AutoMod Note] - Priority 3. DApp News flair 1. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---
+    priority: 3
+    title : ["NEWS", "News", "news", "front page", "page"]
+    url+domain (includes): ["upfiring.com", "medium.com/@metaxchain", "sweetbridge.com", "medium.com/blackmoon-crypto", "medium.com/@flixxo", "medium.com/fansunite", "ins.world", "blog.genesis.vision", "blog.omisego.network", "blog.lendroid.com", "blog.hellobloom.io", "blog.status.im", "medium.com/devery-io"]
+    ~title : ["Ethereum", "ETH", "ether"]
+    set_flair: 
+        text: News
+        template_id: 13f5e134-c260-11e9-9237-0e527c5ac6fc
+    #!comment: "[AutoMod Note] - Priority 3. DApp News flair 2. Title and url+domain keywords detected: '{{match-title}}', '{{match-url+domain}}'."
+---
+    priority: 3
+    title#1 : ["Release", "release", "Released", "released", "Launch", "launch", "launched"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    set_flair: 
+        text: Release
+        template_id: 1ba90898-c260-11e9-9597-0ebdc14d75e6
+    #!comment: "[AutoMod Note] - Priority 3. DApp Release flair 1. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---
+    priority: 3
+    title : ["Release", "release", "Released", "released", "Launch", "launch", "launched"]
+    url+domain (includes): ["upfiring.com", "medium.com/@metaxchain", "sweetbridge.com", "medium.com/blackmoon-crypto", "medium.com/@flixxo", "medium.com/fansunite", "ins.world", "blog.genesis.vision", "blog.omisego.network", "blog.lendroid.com", "blog.hellobloom.io", "blog.status.im", "medium.com/devery-io"]
+    ~title : ["Ethereum", "ETH", "ether"]
+    set_flair: 
+        text: Release
+        template_id: 1ba90898-c260-11e9-9597-0ebdc14d75e6
+    #!comment: "[AutoMod Note] - Priority 3. DApp release flair 2. Title and url+domain keywords detected: '{{match-title}}', '{{match-url+domain}}'."
+---
+    priority: 3
+    title#1 : ["bullish", "bearish"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    ~title : ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Sentiment
+        template_id: 26e96004-c260-11e9-bb65-0ebdae939b9c
+    #!comment: "[AutoMod Note] - Priority 3. DApp Sentiment flair 1. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---
+    priority: 4
+    title+body#1 : ["opinion", "pessimism", "bought", "all in",  "prediction", "predictions", "accumulator", "bull whale",  "bear whale", "Whale", "whale", "google trends", "sentiment", "sentiments", "do you think", "fever", "poll", "polls", "survey", "surveys", "we will never", "we will always", "emotions", "emotion", "feeling", "feelings", "sense", "sensing", "to the top", "hype", "hyped"]
+    title+body#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "token", "tokens", "ERC20"]
+    ~title+body : ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Sentiment
+        template_id: 26e96004-c260-11e9-bb65-0ebdae939b9c
+    #!comment: "[AutoMod Note] - Priority 4. DApp sentiment flair 2. Both title+body search check keywords detected: '{{match-title+body-1}}', '{{match-title+body-2}}' or '{{match-title+body#1}}', '{{match-title+body#2}}'."
+---
+    priority: 3
+    title#1 : ["we will never", "we will always", "sentiment", "sentiments", "mood", "confident", "confidence", "likelyhood", "likely", "prediction", "predictions", "to the top"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "token", "ERC20"]
+    ~domain: ["i.redd.it", "imgur.com"]
+    set_flair: 
+        text: Sentiment
+        template_id: 26e96004-c260-11e9-bb65-0ebdae939b9c
+    #!comment: "[AutoMod Note] - Priority 3. DApp sentiment flair 3. Both title search check keywords detected: '{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---
+    priority: 5
+    title+body#1 : ["strategy", "strategies", "assess", "manipulate", "goal", "good time to buy", "good time", "range trading", "swing trading", "day trading", "short-term trading", "calculate", "calculations", "calculating", "opportunity", "opportunities", "where to trade", "don't invent more than", "should I", "thesis", "stop losses", "stop loss", "option", "options", "50/50", "if you have ideas", "have you got invested", "have you invested", "tips", "worst case", "best case", "tax implications", "tax", "taxes", "prepared to lose", "time", "take a break", "limit-order", "stop order", "trailing stop order", "portfolio", "take on credit"]
+    title+body#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    set_flair: 
+        text: Strategy
+        template_id: 2e33cd22-c260-11e9-bbae-0e6b404c5cee
+    #!comment: "[AutoMod Note] - Priority 5. DApp Strategy flair 1. Both title+body search check keywords detected:'{{match-title+body-1}}', '{{match-title+body-2}}' or '{{match-title+body#1}}', '{{match-title+body#2}}'."
+---
+    priority: 7
+    title#1: ["after"]
+    title#2: ["invest"]
+    title#3: ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    set_flair: 
+        text: Strategy
+        template_id: 2e33cd22-c260-11e9-bbae-0e6b404c5cee
+    #!comment: "[AutoMod Note] - Priority 7. DApp Strategy flair 2. keywords detected from all three title search checks: '{{match-title-1}}', '{{match-title-2}}', '{{match-title-3}}' or '{{match-title#1}}', '{{match-title#2}}', '{{match-title#3}}'."
+---
+    priority: 3
+    title+body#1 : [ "How much", "if the"]
+    title+body#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "Bancor", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    ~title+body : ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Strategy
+        template_id: 2e33cd22-c260-11e9-bbae-0e6b404c5cee
+    #!comment: "[AutoMod Note] - Priority 3. DApp ERC20 Strategy flair 1. Both title+body search check keywords detected:'{{match-title+body-1}}', '{{match-title+body-2}}' or '{{match-title+body#1}}', '{{match-title+body#2}}'."
+---
+    priority: 7
+    body#1: ["don't invest more than", "sold", "bought"]
+    body#2: ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "Bancor", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum"]
+    ~body: ["ETH", "ether", "Ethereum"] 
+    set_flair: 
+        text: Strategy
+        template_id: 2e33cd22-c260-11e9-bbae-0e6b404c5cee
+    #!comment: "[AutoMod Note] - Priority 7. DApp ERC20 Strategy flair 2. Both body search check keywords detected:'{{match-1}}', '{{match-2}}' or '{{match#1}}', '{{match#2}}'."
+    
+
+---
+    priority: 8
+    type: text submission
+    title#1: ["where to", "where can", "how do", "how can", "how to", "need some help", "need help", "why is it", "assistance needed", "appreciated it",  "How is this possible", "i don't know why", "I don't know what happened", "I don't know what to do"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "Bancor", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "token", "tokens", "ERC20", "ICO"]
+    set_flair: 
+        text: Discussion
+        template_id: e6c548b2-c25f-11e9-a822-0ea8a15055d8
+    #!comment: "[AutoMod Note] - Priority 8. DApp ERC20 Support flair 1. Both title search check keywords detected:'{{match-title-1}}', '{{match-title-2}}' or '{{match-title#1}}', '{{match-title#2}}'."
+---
+    priority: 3
+    type: text submission
+    title#1 : ["question", "help", "how much", "advice", "help", "where to", "where can", "how do", "how can", "how can", "howto", "how to", "Why?", "assitance", "appreciate it", "donate", "donation", "donating", "problem", "How is this possible", "i don't know why", "I don't know what happened", "I don't know what to do", "still waiting", "withdraw issue", "deposit issue", "delayed"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "Bancor", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "token", "tokens", "ERC20", "ICO"]
+    ~title : ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Discussion
+        template_id: e6c548b2-c25f-11e9-a822-0ea8a15055d8
+    #!comment: "[AutoMod Note] - Priority 3. DApp Support flair 1. Both title search check keywords detected:'{{match-1}}', '{{match-2}}' or '{{match#1}}', '{{match#2}}'."
+---
+
+    priority: 6
+    title#1 : ["DoS", "hack", "hacked", "hacker", "hackers", "encryption", "security", "secure", "cyber security", "cybersecurity", "attacker", "attackers", "attack", "attacked", "vulnerability", "exploit", "ransomware", "hf", "protect", "protection", "protecting", "avoid", "spam", "spamming", "bug", "bugs", "virus", "viruses", "exploit", "exploits", "NSA", "DDOS", "bounty", "Authy", "security", "2FA"]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "Bancor", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "token", "ERC20"]
+    ~title: ["ether.camp", "EtherCamp", "Ethere Camp", "hard fork", "fork", "hardfork"]
+    set_flair: 
+        text: Security
+        template_id: 21206e88-c260-11e9-b1a6-0e4b8e71c26c
+    #!comment: "[AutoMod Note] - Priority 6. DApp Security flair 1. Both title search check keywords detected:'{{match-1}}', '{{match-2}}' or '{{match#1}}', '{{match#2}}'."
+---
+    priority: 2
+    title#1 : ["tool", "tools", "plugins", "wallet", "wallets", "tracker", "app", "bot", "bots", "tip bot" ]
+    title#2 : ["OmiseGo", "Augur", "TenX", "Golem", "Walton", "Kyber Network", "Brave", "BAT", "SALT", "Metal", "TRON", "DigixDAO", "Binance Coin", "Iconomi", "Populous", "Civic", "0x", "ATMChain", "Status", "ChainLink", "Bancor", "MCAP", "Bytom", "Gnosis", "FunFair", "Aeternity", "Aragon", "TaaS", "Kin", "Bitquence", "Loopring", "district0x", "AdEx", "Centra", "Wings", "iExec", "Melon", "Melonport", "Edgeless", "Request Network", "SONM", "AirSwap", "Storj", "Dentacoin", "Enigma", "Substratum", "WeTrust", "TokenCard", "Cofound.it", "Decentraland", "Eidoo", "Xaurum", "Pillar", "Etheroll", "FirstBlood", "bitqy", "Cindicator", "Target Coin", "Tierion", "Everex", "Credo", "KickCoin", "Aventus", "XPlay", "Viberate", "adToken", "Numeraire", "Polybius", "Monetha", "Mothership", "Rialto", "Chronobank", "Agrello", "Stox", "Patientory", "Po.et", "Rivetz", "Santiment Network", "Lunyr", "Humaniq", "BitDice", "Mysterium", "Hive", "Nexium", "COSS", "OAX", "Nectar", "Ethfinex", "Prism", "Voise", "ALIS", "Primas", "DAO.Casino", "Soarcoin", "Matchpool", "Swarm City", "lampix", "Bancor", "Delphi", "Oaken", "GRID+", "Upfiring", "Gramatik", "adChain", "MetaX", "DICE", "Civil", "Sweetcoin", "Bounty0x", "Ripio", "Request", "Gilgamesh", "iExec", "Tokit", "Blackmoon", "SingularDTV", "DNN", "WePower", "Geens", "Geens.com", "CashPokerPro", "Cash Poker Pro", "Bloom", "SportyFi", "Bankex", "Ujo", "KyberNetwork", "INS", "GenesisVision", "Genesis Vision", "Pink", "Pinkapp", "Lendroid", "Trippki", "Basic Attention Token", "Ambrosus", "Rockchain", "Coinlancer", "Devery.io", "Devery", "Remme", "Earth Token", "Ethino", "spectre", "ORCHID", "utrust", "refereum", "ERC20", "token", "tokens"]
+    ~title : ["ETH", "ether", "Ethereum"]
+    set_flair: 
+        text: Technology
+        template_id: be29f760-c276-11e9-89e8-0e16185feac0
+    #!comment: "[AutoMod Note] - Priority 2. DApp Tool flair 1. Both title search check keywords detected:'{{match-1}}', '{{match-2}}' or '{{match#1}}', '{{match#2}}'."
+
+
+###WELCOME MESSAGE RULES - (Reactivated after adding regex modifier)
+---
+###### Userflair overwrite to fix welcome message spam problem.
+priority: 84
+type: any
+is_edited: false
+author:
+    ~flair_css_class(regex, includes): ['\w+']  # If the css class is empty
+    flair_text(regex, includes): ['\w+']   # But the user does have flair text
+    set_flair: ["{{author_flair_text}}", "noflair"]   # Add a css class but keep the original flair text
+    overwrite_flair: true
+
+###### Welcome Message
+# type: any
+# is_edited: false
+# author:
+#     ~flair_text (regex, includes):  ['\w+']  # only execute when user has no flair text and css class
+#     ~flair_css_class (regex, includes): ['\w+']  
+#     ~name: ["patk35", "istanlkei", "Bi0ha2ard187", "l_-l", "norpiano", "the_Elders"] # Turned off original whitelist to test if fix worked. - _CapR_   
+#     set_flair: ["", "noflair"]
+# message_subject: 'Welcome to /r/Ethfinance!'
+# message: |
+#     Greetings and thank you for [posting to /r/Ethfinance]({{permalink}}). As you may have already learned, this sub is a community for Ethereum news, general discussion, investing, trading, and having fun all at the same time.  We ask that you read through the following list so you can have an easier time settling into our community:
+#     
+#     1. **Review the featured links in our [announcement bar](http://imgur.com/6UdVDuU) just underneath the header.** Of particular importance are our **[Rules](https://www.reddit.com/r/ethfinance/about/rules/)** and **[Public Mod Logs](https://www.reddit.com/r/ethfinance/wiki/mod_log)** pages. Read the rules page to learn how you're expected to conduct yourself. Use the public mod logs page to keep the mods in check in case they aren't enforcing the rules fairly or abuse their power.
+#     2. **Help keep our community interesting by assigning yourself flair which best represents your interests or affiliations.** User flair can be assigned by finding your username near the top of the sidebar and clicking the edit button next to it, [see here](http://imgur.com/08mQtfL).
+#     3. **Make use of the [flair filters](http://imgur.com/tDjeFzA) in the sidebar to help find the content you are seeking.** If you find a post which was improperly tagged, you can fix it by assigning it flair you think is more accurate. Just type "[AutoMod flair: *flair name*]" in a comment and the AutoModerator will assign the post link-flair of your choosing. This will only work for users who have over 1500 comment karma and 3 years account age. 
+#     4. **Participate in our [daily discussion threads](http://imgur.com/47VT6eK).**
+#     5. **Last but not least, please make sure to subscribe.**
+#     
+#     Thank you for having the patience to read this far! Enjoy your visit and we hope to earn your subscribership :) 
+#     
+#     ***
+#     
+#     **IMPORTANT**: If you are being spammed with welcome messages, follow these instructions. In the sidebar, make sure you have "*[Show my flair on this subreddit.](https://imgur.com/paLqubV)*" checkbox enabled and assign yourself visible or invisible flair by clicking the "edit" button next your username. For an explanation on how the welcome message works, [click here](https://www.reddit.com/r/EthFinance/wiki/welcome_message).
+
+
+
+## USER FLAIR RULES
